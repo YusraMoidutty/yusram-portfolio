@@ -922,6 +922,156 @@
         font-size: 10px;
       }
     }
+
+          /* =========================================
+         3D ANDROID ECG / PPG PHONE
+         ========================================= */
+      
+      .medical-3d {
+        position: relative;
+        width: 100%;
+        height: 620px;
+        margin-top: 35px;
+        overflow: hidden;
+      
+        border-radius: 24px;
+        border: 1px solid var(--line);
+      
+        background:
+          radial-gradient(
+            circle at 50% 40%,
+            rgba(94,231,223,0.10),
+            transparent 35%
+          ),
+          radial-gradient(
+            circle at 20% 80%,
+            rgba(139,124,255,0.10),
+            transparent 35%
+          ),
+          #08090d;
+      }
+      
+      #medical3d {
+        width: 100%;
+        height: 100%;
+      }
+      
+      #medical3d canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        touch-action: none;
+      }
+      
+      .medical-label {
+        position: absolute;
+      
+        z-index: 20;
+      
+        padding: 10px 14px;
+      
+        background: rgba(8,9,13,0.78);
+        backdrop-filter: blur(12px);
+      
+        border: 1px solid rgba(94,231,223,0.25);
+        border-radius: 10px;
+      
+        color: var(--muted);
+      
+        font-size: 11px;
+        letter-spacing: 0.5px;
+      
+        box-shadow:
+          0 10px 30px rgba(0,0,0,0.35);
+      }
+      
+      .medical-label strong {
+        display: block;
+      
+        color: var(--accent2);
+      
+        font-size: 12px;
+      
+        letter-spacing: 1.5px;
+      
+        margin-bottom: 3px;
+      }
+      
+      .medical-label-one {
+        top: 18%;
+        left: 5%;
+      }
+      
+      .medical-label-two {
+        top: 35%;
+        right: 5%;
+      }
+      
+      .medical-label-three {
+        bottom: 20%;
+        left: 5%;
+      }
+      
+      .medical-label-four {
+        bottom: 12%;
+        right: 5%;
+      }
+      
+      .medical-help {
+        position: absolute;
+      
+        bottom: 18px;
+        left: 50%;
+      
+        transform: translateX(-50%);
+      
+        z-index: 30;
+      
+        padding: 9px 17px;
+      
+        border-radius: 100px;
+      
+        background: rgba(8,9,13,0.78);
+      
+        border: 1px solid var(--line);
+      
+        color: var(--muted);
+      
+        font-size: 11px;
+      
+        white-space: nowrap;
+      
+        pointer-events: none;
+      }
+      
+      @media (max-width: 800px) {
+      
+        .medical-3d {
+          height: 500px;
+        }
+      
+        .medical-label {
+          font-size: 9px;
+          padding: 7px 9px;
+        }
+      
+        .medical-label-one {
+          left: 2%;
+        }
+      
+        .medical-label-two {
+          right: 2%;
+        }
+      
+        .medical-label-three {
+          left: 2%;
+        }
+      
+        .medical-label-four {
+          right: 2%;
+        }
+      
+      }
     
   </style>
   <script type="importmap">
@@ -1457,6 +1607,7 @@
           </div>
   
         </div>
+        
   
   
         <div class="timeline-item">
@@ -1507,6 +1658,51 @@
             <span class="tag">Debugging</span>
           </div>
   
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </section>
+
+  <!-- INTERACTIVE 3D BIOMEDICAL MONITORING -->
+
+  <section id="biomedical-3d">
+  
+    <div class="container">
+  
+      <div class="section-title">
+        <div class="section-label">Biomedical Monitoring</div>
+        <h2>Interactive ECG & PPG<br>Monitoring System.</h2>
+      </div>
+  
+      <div class="medical-3d">
+  
+        <div class="medical-label medical-label-one">
+          <strong>ECG</strong>
+          Real-Time Cardiac Signal
+        </div>
+  
+        <div class="medical-label medical-label-two">
+          <strong>PPG</strong>
+          Pulse Waveform
+        </div>
+  
+        <div class="medical-label medical-label-three">
+          <strong>BLUETOOTH</strong>
+          Wireless Sensor Data
+        </div>
+  
+        <div class="medical-label medical-label-four">
+          <strong>ANDROID</strong>
+          Mobile Health Monitoring
+        </div>
+  
+        <div id="medical3d"></div>
+  
+        <div class="medical-help">
+          ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
         </div>
   
       </div>
@@ -2311,6 +2507,13 @@ function animate() {
 animate();
 
 </script>
+
+  <script type="module">
+
+import * as THREE from "three";
+
+import { OrbitControls }
+from "three/addons/controls/OrbitControls.js";
   
 
 
