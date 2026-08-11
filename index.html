@@ -1,31 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+where to add all this code in here 
+where to add 3d phone in 
+\<!DOCTYPE html>
+\<html lang="en">
+\<head>
+  \<meta charset="UTF-8">
+  \<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Yusra Moidutty | Computer Vision & Embedded AI</title>
+  \<title>Yusra Moidutty | Computer Vision & Embedded AI\</title>
 
-  <meta name="description"
+  \<meta name="description"
         content="Yusra Moidutty — Computer Vision, Deep Learning, FPGA and Embedded AI Researcher.">
 
-  <style>
-    * {
+  \<style>
+    \* {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
-    :root {
-      --bg: #08090d;
-      --card: #101218;
-      --card2: #14161e;
-      --text: #f5f5f7;
-      --muted: #a5a7b0;
-      --line: rgba(255,255,255,0.09);
-      --accent: #8b7cff;
-      --accent2: #5ee7df;
+    \:root {
+      \--bg: #08090d;
+      \--card: #101218;
+      \--card2: #14161e;
+      \--text: #f5f5f7;
+      \--muted: #a5a7b0;
+      \--line: rgba(255,255,255,0.09);
+      \--accent: #8b7cff;
+      \--accent2: #5ee7df;
     }
 
     body {
@@ -46,7 +48,7 @@
       margin: auto;
     }
 
-    /* NAVBAR */
+    /\* NAVBAR \*/
 
     nav {
       position: fixed;
@@ -88,11 +90,11 @@
       transition: 0.3s;
     }
 
-    .nav-links a:hover {
+    .nav-links a\:hover {
       color: white;
     }
 
-    /* HERO */
+    /\* HERO \*/
 
     .hero {
       min-height: 100vh;
@@ -170,7 +172,7 @@
       color: black;
     }
 
-    .btn-primary:hover {
+    .btn-primary\:hover {
       transform: translateY(-2px);
     }
 
@@ -179,7 +181,7 @@
       color: white;
     }
 
-    .btn-secondary:hover {
+    .btn-secondary\:hover {
       background: var(--card2);
     }
 
@@ -205,7 +207,7 @@
       border: 5px solid var(--bg);
     }
 
-    /* SECTIONS */
+    /\* SECTIONS \*/
 
     section {
       padding: 110px 0;
@@ -257,7 +259,7 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .info-item:last-child {
+    .info-item\:last-child {
       border-bottom: none;
     }
 
@@ -273,7 +275,7 @@
       font-size: 14px;
     }
 
-    /* RESEARCH */
+    /\* RESEARCH \*/
 
     .research-card {
       background: linear-gradient(145deg, #11131a, #0d0f14);
@@ -293,9 +295,9 @@
       margin-bottom: 28px;
     }
 
-    /* =========================
+    /\* =========================
    3D TRANSPORTATION SCENE
-   ========================= */
+   \========================= \*/
 
     .transport-3d {
       position: relative;
@@ -310,7 +312,7 @@
       perspective: 900px;
     }
     
-    /* Horizon */
+    /\* Horizon \*/
     .transport-horizon {
       position: absolute;
       left: 0;
@@ -320,7 +322,7 @@
       background: rgba(255,255,255,0.15);
     }
     
-    /* Road */
+    /\* Road \*/
     .road-3d {
       position: absolute;
       width: 75%;
@@ -343,7 +345,7 @@
           rgba(255,255,255,0.025) 92%,
           transparent 100%
         ),
-        #181b23;
+        \#181b23;
     
       border-left: 2px solid rgba(94,231,223,0.55);
       border-right: 2px solid rgba(94,231,223,0.55);
@@ -353,7 +355,7 @@
         inset 0 0 80px rgba(0,0,0,0.8);
     }
     
-    /* Road center line */
+    /\* Road center line \*/
     .road-center {
       position: absolute;
       left: 50%;
@@ -372,7 +374,7 @@
       );
     }
     
-    /* Road boundary detection lines */
+    /\* Road boundary detection lines \*/
     .boundary-left,
     .boundary-right {
       position: absolute;
@@ -395,7 +397,7 @@
       right: 14%;
     }
     
-    /* Vehicle */
+    /\* Vehicle \*/
     .vehicle {
       position: absolute;
       width: 90px;
@@ -407,8 +409,8 @@
     
       background: linear-gradient(
         180deg,
-        #d9dce5,
-        #676b78
+        \#d9dce5,
+        \#676b78
       );
     
       border-radius: 18px 18px 8px 8px;
@@ -420,7 +422,7 @@
       z-index: 5;
     }
     
-    /* Vehicle roof */
+    /\* Vehicle roof \*/
     .vehicle::before {
       content: "";
       position: absolute;
@@ -436,7 +438,7 @@
       border-radius: 15px 15px 3px 3px;
     }
     
-    /* Headlights */
+    /\* Headlights \*/
     .vehicle::after {
       content: "";
       position: absolute;
@@ -457,7 +459,7 @@
         88px 10px 30px rgba(255,255,255,0.25);
     }
     
-    /* Floating information cards */
+    /\* Floating information cards \*/
     .ai-label {
       position: absolute;
     
@@ -506,7 +508,7 @@
       right: 8%;
     }
     
-    /* Detection box */
+    /\* Detection box \*/
     .detection-box {
       position: absolute;
     
@@ -542,7 +544,7 @@
       letter-spacing: 1px;
     }
     
-    /* Small perspective grid */
+    /\* Small perspective grid \*/
     .scene-grid {
       position: absolute;
       left: 0;
@@ -572,7 +574,7 @@
       opacity: 0.35;
     }
     
-    /* Mobile */
+    /\* Mobile \*/
     @media (max-width: 800px) {
     
       .transport-3d {
@@ -620,7 +622,7 @@
       background: rgba(255,255,255,0.025);
     }
 
-    /* METRICS */
+    /\* METRICS \*/
 
     .metrics {
       display: grid;
@@ -647,7 +649,7 @@
       font-size: 12px;
     }
 
-    /* PROJECTS */
+    /\* PROJECTS \*/
 
     .projects {
       display: grid;
@@ -663,7 +665,7 @@
       transition: 0.3s;
     }
 
-    .project:hover {
+    .project\:hover {
       transform: translateY(-5px);
       border-color: rgba(139,124,255,0.45);
     }
@@ -686,7 +688,7 @@
       margin-bottom: 20px;
     }
 
-    /* SKILLS */
+    /\* SKILLS \*/
 
     .skills {
       display: flex;
@@ -703,7 +705,7 @@
       font-size: 14px;
     }
 
-    /* EDUCATION */
+    /\* EDUCATION \*/
 
     .timeline {
       border-left: 1px solid var(--line);
@@ -742,7 +744,7 @@
       margin-top: 4px;
     }
 
-    /* CONTACT */
+    /\* CONTACT \*/
 
     .contact {
       text-align: center;
@@ -762,7 +764,7 @@
       flex-wrap: wrap;
     }
 
-    /* FOOTER */
+    /\* FOOTER \*/
 
     footer {
       border-top: 1px solid var(--line);
@@ -772,7 +774,7 @@
       font-size: 13px;
     }
 
-    /* MOBILE */
+    /\* MOBILE \*/
 
     @media (max-width: 800px) {
 
@@ -822,9 +824,9 @@
       }
     }
 
-      /* =========================
+      /\* =========================
        INTERACTIVE 3D VISION
-       ========================= */
+       \========================= \*/
     
     .interactive-3d {
       position: relative;
@@ -837,12 +839,12 @@
       background: #08090d;
     }
     
-    #vision3d {
+    \#vision3d {
       width: 100%;
       height: 100%;
     }
     
-    #vision3d canvas {
+    \#vision3d canvas {
       display: block;
       width: 100%;
       height: 100%;
@@ -922,929 +924,779 @@
         font-size: 10px;
       }
     }
-
-          /* =========================================
-         3D ANDROID ECG / PPG PHONE
-         ========================================= */
-      
-      .medical-3d {
-        position: relative;
-        width: 100%;
-        height: 620px;
-        margin-top: 35px;
-        overflow: hidden;
-      
-        border-radius: 24px;
-        border: 1px solid var(--line);
-      
-        background:
-          radial-gradient(
-            circle at 50% 40%,
-            rgba(94,231,223,0.10),
-            transparent 35%
-          ),
-          radial-gradient(
-            circle at 20% 80%,
-            rgba(139,124,255,0.10),
-            transparent 35%
-          ),
-          #08090d;
-      }
-      
-      #medical3d {
-        width: 100%;
-        height: 100%;
-      }
-      
-      #medical3d canvas {
-        display: block;
-        width: 100%;
-        height: 100%;
-        touch-action: none;
-      }
-      
-      .medical-label {
-        position: absolute;
-      
-        z-index: 20;
-      
-        padding: 10px 14px;
-      
-        background: rgba(8,9,13,0.78);
-        backdrop-filter: blur(12px);
-      
-        border: 1px solid rgba(94,231,223,0.25);
-        border-radius: 10px;
-      
-        color: var(--muted);
-      
-        font-size: 11px;
-        letter-spacing: 0.5px;
-      
-        box-shadow:
-          0 10px 30px rgba(0,0,0,0.35);
-      }
-      
-      .medical-label strong {
-        display: block;
-      
-        color: var(--accent2);
-      
-        font-size: 12px;
-      
-        letter-spacing: 1.5px;
-      
-        margin-bottom: 3px;
-      }
-      
-      .medical-label-one {
-        top: 18%;
-        left: 5%;
-      }
-      
-      .medical-label-two {
-        top: 35%;
-        right: 5%;
-      }
-      
-      .medical-label-three {
-        bottom: 20%;
-        left: 5%;
-      }
-      
-      .medical-label-four {
-        bottom: 12%;
-        right: 5%;
-      }
-      
-      .medical-help {
-        position: absolute;
-      
-        bottom: 18px;
-        left: 50%;
-      
-        transform: translateX(-50%);
-      
-        z-index: 30;
-      
-        padding: 9px 17px;
-      
-        border-radius: 100px;
-      
-        background: rgba(8,9,13,0.78);
-      
-        border: 1px solid var(--line);
-      
-        color: var(--muted);
-      
-        font-size: 11px;
-      
-        white-space: nowrap;
-      
-        pointer-events: none;
-      }
-      
-      @media (max-width: 800px) {
-      
-        .medical-3d {
-          height: 500px;
-        }
-      
-        .medical-label {
-          font-size: 9px;
-          padding: 7px 9px;
-        }
-      
-        .medical-label-one {
-          left: 2%;
-        }
-      
-        .medical-label-two {
-          right: 2%;
-        }
-      
-        .medical-label-three {
-          left: 2%;
-        }
-      
-        .medical-label-four {
-          right: 2%;
-        }
-      
-      }
     
-  </style>
-  <script type="importmap">
+  \</style>
+  \<script type="importmap">
   {
     "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js",
-      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/"
+      "three": "[https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js](https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js)",
+      "three/addons/": "[https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/](https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/)"
     }
   }
-  </script>
-</head>
+  \</script>
+\</head>
 
-<body>
+\<body>
 
-  <!-- NAVIGATION -->
+  \<!-- NAVIGATION -->
 
-  <nav>
-    <div class="container nav-inner">
+  \<nav>
+    \<div class="container nav-inner">
 
-      <a href="#home" class="logo">
-        Yusra<span>.</span>
-      </a>
+      \<a href="#home" class="logo">
+        Yusra\<span>.\</span>
+      \</a>
 
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      \<ul class="nav-links">
+        \<li>\<a href="#about">About\</a>\</li>
+        \<li>\<a href="#research">Research\</a>\</li>
+        \<li>\<a href="#projects">Projects\</a>\</li>
+        \<li>\<a href="#skills">Skills\</a>\</li>
+        \<li>\<a href="#education">Education\</a>\</li>
+        \<li>\<a href="#contact">Contact\</a>\</li>
+      \</ul>
 
-    </div>
-  </nav>
+    \</div>
+  \</nav>
 
 
-  <!-- HERO -->
+  \<!-- HERO -->
 
-  <section class="hero" id="home">
+  \<section class="hero" id="home">
 
-    <div class="container hero-grid">
+    \<div class="container hero-grid">
 
-      <div>
+      \<div>
 
-        <div class="eyebrow">
+        \<div class="eyebrow">
           Computer Vision • Deep Learning • Embedded AI
-        </div>
+        \</div>
 
-        <h1>
-          Hi, I'm<br>
-          <span>Yusra Moidutty.</span>
-        </h1>
+        \<h1>
+          Hi, I'm\<br>
+          \<span>Yusra Moidutty.\</span>
+        \</h1>
 
-        <p class="hero-description">
+        \<p class="hero-description">
           Researcher working at the intersection of computer vision,
           deep learning, intelligent transportation systems, FPGA
           acceleration and embedded AI.
-        </p>
+        \</p>
 
-        <div class="buttons">
+        \<div class="buttons">
 
-          <a href="#research" class="btn btn-primary">
+          \<a href="#research" class="btn btn-primary">
             Explore My Research
-          </a>
+          \</a>
 
-          <!-- <a href="Yusra_Moidutty_CV.pdf"
-             target="_blank"
+          \<!-- \<a href="Yusra\_Moidutty\_CV.pdf"
+             target="\_blank"
              class="btn btn-secondary">
             View CV
-          </a> -->
+          \</a> -->
 
-        </div>
+        \</div>
 
-      </div>
-
-
-      <div class="profile-wrapper">
-
-        <div class="profile">
-          <img src="photo.jpeg" alt="Yusra Moidutty">
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+      \</div>
 
 
-  <!-- ABOUT -->
+      \<div class="profile-wrapper">
 
-  <section id="about">
+        \<div class="profile">
+          \<img src="photo.jpeg" alt="Yusra Moidutty">
+        \</div>
 
-    <div class="container">
+      \</div>
 
-      <div class="section-title">
+    \</div>
 
-        <div class="section-label">About Me</div>
-
-        <h2>Building intelligent<br>vision systems.</h2>
-
-      </div>
+  \</section>
 
 
-      <div class="about-grid">
+  \<!-- ABOUT -->
 
-        <div class="about-text">
+  \<section id="about">
 
-          <p>
+    \<div class="container">
+
+      \<div class="section-title">
+
+        \<div class="section-label">About Me\</div>
+
+        \<h2>Building intelligent\<br>vision systems.\</h2>
+
+      \</div>
+
+
+      \<div class="about-grid">
+
+        \<div class="about-text">
+
+          \<p>
             My work focuses on developing computer vision systems
             capable of operating reliably in challenging real-world
             environments.
-          </p>
+          \</p>
 
-          <p>
+          \<p>
             My research interests include deep learning,
             image segmentation, intelligent
             transportation systems, embedded AI and hardware
             acceleration.
-          </p>
+          \</p>
 
-          <p>
+          \<p>
             I am particularly interested in taking AI models from
             research environments and deploying them on practical
             embedded and hardware platforms.
-          </p>
+          \</p>
 
-        </div>
-
-
-        <div class="info-card">
-
-          <div class="info-item">
-            <strong>Research Focus</strong>
-            <span>Computer Vision & Deep Learning</span>
-          </div>
-
-          <div class="info-item">
-            <strong>Specialization</strong>
-            <span>Image Segmentation & Embedded AI</span>
-          </div>
-
-          <div class="info-item">
-            <strong>Hardware</strong>
-            <span>Raspberry Pi • FPGA • PYNQ</span>
-          </div>
-
-          <div class="info-item">
-            <strong>Applications</strong>
-            <span>Intelligent Transportation Systems</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+        \</div>
 
 
-  <!-- RESEARCH -->
+        \<div class="info-card">
 
-  <section id="research">
+          \<div class="info-item">
+            \<strong>Research Focus\</strong>
+            \<span>Computer Vision & Deep Learning\</span>
+          \</div>
 
-    <div class="container">
+          \<div class="info-item">
+            \<strong>Specialization\</strong>
+            \<span>Image Segmentation & Embedded AI\</span>
+          \</div>
 
-      <div class="section-title">
+          \<div class="info-item">
+            \<strong>Hardware\</strong>
+            \<span>Raspberry Pi • FPGA • PYNQ\</span>
+          \</div>
 
-        <div class="section-label">Featured Research</div>
+          \<div class="info-item">
+            \<strong>Applications\</strong>
+            \<span>Intelligent Transportation Systems\</span>
+          \</div>
 
-        <h2>Road Scene Segmentation <br>for Intelligent Transportation Systems</h2>
+        \</div>
 
-      </div>
+      \</div>
+
+    \</div>
+
+  \</section>
 
 
-      <div class="research-card">
+  \<!-- RESEARCH -->
 
-        <h3>
+  \<section id="research">
+
+    \<div class="container">
+
+      \<div class="section-title">
+
+        \<div class="section-label">Featured Research\</div>
+
+        \<h2>Road Scene Segmentation \<br>for Intelligent Transportation Systems\</h2>
+
+      \</div>
+
+
+      \<div class="research-card">
+
+        \<h3>
            Learning-Based for Road Markings
-        </h3>
+        \</h3>
 
-        <p>
+        \<p>
           A computer vision framework for Night road-boundary
           segmentation designed to address low illumination,
           headlight glare, shadows and sensor noise. The work
           combines image enhancement, deep-learning segmentation
           and embedded deployment.
-        </p>
+        \</p>
 
 
-        <div class="tags">
+        \<div class="tags">
 
-          <span class="tag">Computer Vision for Intelligent Transportation Systems</span>
-          <span class="tag">Image Segmentation</span>
-          <span class="tag">CLAHE</span>
-          <span class="tag">Gamma Correction</span>
-          <span class="tag">Computer Vision</span>
-          <span class="tag">ADAS</span>
-          <span class="tag">Raspberry Pi 5</span>
-          <span class="tag">FPGA / PYNQ</span>
+          \<span class="tag">Computer Vision for Intelligent Transportation Systems\</span>
+          \<span class="tag">Image Segmentation\</span>
+          \<span class="tag">CLAHE\</span>
+          \<span class="tag">Gamma Correction\</span>
+          \<span class="tag">Computer Vision\</span>
+          \<span class="tag">ADAS\</span>
+          \<span class="tag">Raspberry Pi 5\</span>
+          \<span class="tag">FPGA / PYNQ\</span>
 
-        </div>
-        <!-- 3D TRANSPORTATION VISUAL -->
+        \</div>
+        \<!-- 3D TRANSPORTATION VISUAL -->
 
-          <div class="transport-3d">
+          \<div class="transport-3d">
           
-            <div class="transport-horizon"></div>
+            \<div class="transport-horizon">\</div>
           
-            <div class="scene-grid"></div>
+            \<div class="scene-grid">\</div>
           
-            <div class="road-3d">
+            \<div class="road-3d">
           
-              <div class="road-center"></div>
+              \<div class="road-center">\</div>
           
-              <div class="boundary-left"></div>
-              <div class="boundary-right"></div>
+              \<div class="boundary-left">\</div>
+              \<div class="boundary-right">\</div>
           
-            </div>
-          
-          
-            <!-- Vehicle -->
-          
-            <div class="vehicle"></div>
+            \</div>
           
           
-            <!-- AI Detection Box -->
+            \<!-- Vehicle -->
           
-            <div class="detection-box">
-              <span>ROAD DETECTED</span>
-            </div>
+            \<div class="vehicle">\</div>
           
           
-            <!-- AI Information -->
+            \<!-- AI Detection Box -->
           
-            <div class="ai-label label-one">
-              <strong>ROAD SEGMENTATION</strong>
+            \<div class="detection-box">
+              \<span>ROAD DETECTED\</span>
+            \</div>
+          
+          
+            \<!-- AI Information -->
+          
+            \<div class="ai-label label-one">
+              \<strong>ROAD SEGMENTATION\</strong>
               Pixel-Level Analysis
-            </div>
+            \</div>
           
-            <div class="ai-label label-two">
-              <strong>ADAS</strong>
+            \<div class="ai-label label-two">
+              \<strong>ADAS\</strong>
               Intelligent Road Understanding
-            </div>
+            \</div>
           
-            <div class="ai-label label-three">
-              <strong>EDGE AI</strong>
+            \<div class="ai-label label-three">
+              \<strong>EDGE AI\</strong>
               Real-Time Processing
-            </div>
+            \</div>
           
-            <div class="ai-label label-four">
-              <strong>FPGA</strong>
+            \<div class="ai-label label-four">
+              \<strong>FPGA\</strong>
               Hardware Acceleration
-            </div>
+            \</div>
           
-          </div>
+          \</div>
 
 
-        <div class="metrics">
-          <div class="metric">
-            <strong>Deep Learning</strong>
-            <span>Vision-Based Segmentation</span>
-          </div>
+        \<div class="metrics">
+          \<div class="metric">
+            \<strong>Deep Learning\</strong>
+            \<span>Vision-Based Segmentation\</span>
+          \</div>
           
-          <div class="metric">
-            <strong>Real-Time</strong>
-            <span>Embedded Vision</span>
-          </div>
+          \<div class="metric">
+            \<strong>Real-Time\</strong>
+            \<span>Embedded Vision\</span>
+          \</div>
           
-          <div class="metric">
-            <strong>FPGA</strong>
-            <span>Hardware Acceleration</span>
-          </div>
+          \<div class="metric">
+            \<strong>FPGA\</strong>
+            \<span>Hardware Acceleration\</span>
+          \</div>
           
-          <div class="metric">
-            <strong>ITS</strong>
-            <span>Intelligent Transportation</span>
-          </div>
-        </div>
+          \<div class="metric">
+            \<strong>ITS\</strong>
+            \<span>Intelligent Transportation\</span>
+          \</div>
+        \</div>
 
-      </div>
+      \</div>
 
-    </div>
+    \</div>
 
-  </section>
+  \</section>
 
   
 
 
-  <!-- PROJECTS -->
+  \<!-- PROJECTS -->
 
-  <section id="projects">
+  \<section id="projects">
 
-    <div class="container">
+    \<div class="container">
 
-      <div class="section-title">
+      \<div class="section-title">
 
-        <div class="section-label">Selected Projects</div>
-        <!-- INTERACTIVE 3D VISION SYSTEM -->
+        \<div class="section-label">Selected Projects\</div>
+        \<!-- INTERACTIVE 3D VISION SYSTEM -->
 
-          <div class="interactive-3d">
+          \<div class="interactive-3d">
           
-            <div class="scene-title">
-              <strong>INTERACTIVE VISION SYSTEM</strong>
-              <span>3D Transportation Concept</span>
-            </div>
+            \<div class="scene-title">
+              \<strong>INTERACTIVE VISION SYSTEM\</strong>
+              \<span>3D Transportation Concept\</span>
+            \</div>
           
-            <div class="scene-status">
-              <div class="status-dot"></div>
+            \<div class="scene-status">
+              \<div class="status-dot">\</div>
               REAL-TIME VISION
-            </div>
+            \</div>
           
-            <div id="vision3d"></div>
+            \<div id="vision3d">\</div>
           
-            <div class="scene-help">
+            \<div class="scene-help">
               ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
-            </div>
+            \</div>
           
-          </div>
+          \</div>
         
 
-        <h2>Research Orientation into<br>real-world systems.</h2>
+        \<h2>Research Orientation into\<br>real-world systems.\</h2>
 
-      </div>
+      \</div>
 
 
-      <div class="projects">
+      \<div class="projects">
 
-        <div class="project">
+        \<div class="project">
 
-          <div class="project-number">01 / COMPUTER VISION</div>
+          \<div class="project-number">01 / COMPUTER VISION\</div>
 
-          <h3> Road Scene Segmentation</h3>
+          \<h3> Road Scene Segmentation\</h3>
 
-          <p>
+          \<p>
             Development and evaluation of a Computer Vision for Intelligent Transportation Systems-based
             segmentation system for Night road-boundary
             detection and pixel-level evaluation.
-          </p>
+          \</p>
 
-          <div class="tags">
-            <span class="tag">Computer Vision for Intelligent Transportation Systems</span>
-            <span class="tag">Python</span>
-            <span class="tag">Deep Learning</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Computer Vision for Intelligent Transportation Systems\</span>
+            \<span class="tag">Python\</span>
+            \<span class="tag">Deep Learning\</span>
+          \</div>
 
-        </div>
+        \</div>
 
 
-        <div class="project">
+        \<div class="project">
 
-          <div class="project-number">02 / FPGA</div>
+          \<div class="project-number">02 / FPGA\</div>
 
-          <h3>Computer Vision for Intelligent Transportation Systems on Field Programmable Gate Array </h3>
+          \<h3>Computer Vision for Intelligent Transportation Systems on Field Programmable Gate Array \</h3>
 
-          <p>
+          \<p>
             Exploration of hardware deployment of a Computer Vision for Intelligent Transportation Systems model
             on a Field Programmable Gate Array (FPGA) platform, including model conversion,
             inference and comparison with CPU execution.
-          </p>
+          \</p>
 
-          <div class="tags">
-            <span class="tag">FPGA</span>
-            <span class="tag">PYNQ</span>
-            <span class="tag">ONNX - Model Format</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">FPGA\</span>
+            \<span class="tag">PYNQ\</span>
+            \<span class="tag">ONNX - Model Format\</span>
+          \</div>
 
-        </div>
+        \</div>
 
 
-        <div class="project">
+        \<div class="project">
 
-          <div class="project-number">03 / EMBEDDED AI</div>
+          \<div class="project-number">03 / EMBEDDED AI\</div>
 
-          <h3>Raspberry Pi 5 Deployment</h3>
+          \<h3>Raspberry Pi 5 Deployment\</h3>
 
-          <p>
+          \<p>
             Embedded implementation of Night road-boundary
             segmentation using a Raspberry Pi 5 and camera-based
             real-time processing pipeline.
-          </p>
+          \</p>
 
-          <div class="tags">
-            <span class="tag">Raspberry Pi 5</span>
-            <span class="tag">Embedded AI</span>
-            <span class="tag">Real-Time Vision</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Raspberry Pi 5\</span>
+            \<span class="tag">Embedded AI\</span>
+            \<span class="tag">Real-Time Vision\</span>
+          \</div>
 
-        </div>
+        \</div>
 
 
-        <div class="project">
+        \<div class="project">
 
-          <div class="project-number">04 / IMAGE PROCESSING</div>
+          \<div class="project-number">04 / IMAGE PROCESSING\</div>
 
-          <h3> Image Enhancement</h3>
+          \<h3> Image Enhancement\</h3>
 
-          <p>
+          \<p>
             Multi-stage image enhancement pipeline using bilateral
             filtering, gamma correction, CLAHE, HSV processing,
             morphological operations and connected components.
-          </p>
+          \</p>
 
-          <div class="tags">
-            <span class="tag">CLAHE</span>
-            <span class="tag">OpenCV</span>
-            <span class="tag">Image Processing</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">CLAHE\</span>
+            \<span class="tag">OpenCV\</span>
+            \<span class="tag">Image Processing\</span>
+          \</div>
 
-        </div>
+        \</div>
 
-      </div>
+      \</div>
 
-    </div>
+    \</div>
 
-  </section>
-
-
-  <!-- SKILLS -->
-
-  <section id="skills">
-
-    <div class="container">
-
-      <div class="section-title">
-
-        <div class="section-label">Technical Skills</div>
-
-        <h2>Tools I work with.</h2>
-
-      </div>
+  \</section>
 
 
-      <div class="skills">
+  \<!-- SKILLS -->
 
-        <span class="skill">Python</span>
-        <span class="skill">HTML/CSS/JavaScript</span>
-        <span class="skill">ReactJS</span>
-        <span class="skill">Node.js</span>
-        <span class="skill">Odoo - ERP (Enterprise Resource Planning) system</span>
-        <span class="skill">Computer Vision for Intelligent Transportation Systems</span>
-        <span class="skill">Computer Vision</span>
-        <span class="skill">OpenCV</span>
-        <span class="skill">Deep Learning</span>
-        <span class="skill">Image Segmentation</span>
-        <span class="skill">Field Programmable Gate Array (FPGA)</span>
-        <span class="skill">PYNQ</span>
-        <span class="skill">Raspberry Pi</span>
-        <span class="skill">Embedded AI</span>
-        <span class="skill">MATLAB</span>
-        <span class="skill">Git / GitHub</span>
+  \<section id="skills">
 
-      </div>
+    \<div class="container">
 
-    </div>
+      \<div class="section-title">
 
-  </section>
+        \<div class="section-label">Technical Skills\</div>
 
-  <section id="experience">
+        \<h2>Tools I work with.\</h2>
+
+      \</div>
+
+
+      \<div class="skills">
+
+        \<span class="skill">Python\</span>
+        \<span class="skill">HTML/CSS/JavaScript\</span>
+        \<span class="skill">ReactJS\</span>
+        \<span class="skill">Node.js\</span>
+        \<span class="skill">Odoo - ERP (Enterprise Resource Planning) system\</span>
+        \<span class="skill">Computer Vision for Intelligent Transportation Systems\</span>
+        \<span class="skill">Computer Vision\</span>
+        \<span class="skill">OpenCV\</span>
+        \<span class="skill">Deep Learning\</span>
+        \<span class="skill">Image Segmentation\</span>
+        \<span class="skill">Field Programmable Gate Array (FPGA)\</span>
+        \<span class="skill">PYNQ\</span>
+        \<span class="skill">Raspberry Pi\</span>
+        \<span class="skill">Embedded AI\</span>
+        \<span class="skill">MATLAB\</span>
+        \<span class="skill">Git / GitHub\</span>
+
+      \</div>
+
+    \</div>
+
+  \</section>
+
+  \<section id="experience">
   
-    <div class="container">
+    \<div class="container">
   
-      <div class="section-title">
+      \<div class="section-title">
   
-        <div class="section-label">Experience</div>
+        \<div class="section-label">Experience\</div>
   
-        <h2>Professional journey.</h2>
+        \<h2>Professional journey.\</h2>
   
-      </div>
+      \</div>
   
   
-      <div class="timeline">
+      \<div class="timeline">
   
-        <div class="timeline-item">
+        \<div class="timeline-item">
   
-          <div class="year">AUG 2024 — PRESENT</div>
+          \<div class="year">AUG 2024 — PRESENT\</div>
   
-          <h3>Research Assistant / MS Research Scholar</h3>
+          \<h3>Research Assistant / MS Research Scholar\</h3>
   
-          <p><strong>Indian Institute of Technology, Palakkad</strong></p>
+          \<p>\<strong>Indian Institute of Technology, Palakkad\</strong>\</p>
   
-          <p>
+          \<p>
             Conducting research in computer vision and intelligent
             transportation systems, with a focus on road scene
             segmentation, image processing, deep learning, and
             resource-efficient deployment.
-          </p>
+          \</p>
   
-          <div class="tags">
-            <span class="tag">Computer Vision</span>
-            <span class="tag">Deep Learning</span>
-            <span class="tag">Image Processing</span>
-            <span class="tag">FPGA</span>
-            <span class="tag">Embedded AI</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Computer Vision\</span>
+            \<span class="tag">Deep Learning\</span>
+            \<span class="tag">Image Processing\</span>
+            \<span class="tag">FPGA\</span>
+            \<span class="tag">Embedded AI\</span>
+          \</div>
   
-        </div>
+        \</div>
   
   
-        <div class="timeline-item">
+        \<div class="timeline-item">
   
-          <div class="year">JUN 2023 — JUL 2024</div>
+          \<div class="year">JUN 2023 — JUL 2024\</div>
   
-          <h3>Junior Research Fellow (JRF)</h3>
+          \<h3>Junior Research Fellow (JRF)\</h3>
   
-          <p><strong>Indian Institute of Technology, Palakkad</strong></p>
+          \<p>\<strong>Indian Institute of Technology, Palakkad\</strong>\</p>
   
-          <p>
+          \<p>
             Worked on biomedical signal processing and mobile health-monitoring
             applications, developing Android-based solutions for real-time
             physiological monitoring and human activity recognition.
-          </p>
+          \</p>
           
-          <p>
-            <strong>Human Activity-Aware Heart Rate Monitoring:</strong>
+          \<p>
+            \<strong>Human Activity-Aware Heart Rate Monitoring:\</strong>
             Developed an Android application integrating GPS and accelerometer
             data with a Photoplethysmography (PPG) sensor board for activity-aware, real-time heart-rate
             monitoring. Patent documented.
-          </p>
+          \</p>
           
-          <p>
-            <strong>Real-Time Bluetooth ECG/PPG Monitoring:</strong>
+          \<p>
+            \<strong>Real-Time Bluetooth ECG/PPG Monitoring:\</strong>
             Developed an Android application for wireless acquisition and
             dynamic visualization of Electrocardiogram (ECG) and Photoplethysmography (PPG) biomedical signals.
-          </p>
+          \</p>
   
-          <div class="tags">
-            <span class="tag">Android</span>
-            <span class="tag">Python</span>
-            <span class="tag">Electrocardiogram (ECG) / Photoplethysmography (PPG)</span>
-            <span class="tag">IoT</span>
-            <span class="tag">Signal Processing</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Android\</span>
+            \<span class="tag">Python\</span>
+            \<span class="tag">Electrocardiogram (ECG) / Photoplethysmography (PPG)\</span>
+            \<span class="tag">IoT\</span>
+            \<span class="tag">Signal Processing\</span>
+          \</div>
   
-        </div>
+        \</div>
         
   
   
-        <div class="timeline-item">
+        \<div class="timeline-item">
   
-          <div class="year">DEC 2023 — JUN 2024</div>
+          \<div class="year">DEC 2023 — JUN 2024\</div>
   
-          <h3>Odoo Developer</h3>
+          \<h3>Odoo Developer\</h3>
   
-          <p><strong>Loyal IT Solutions, Infopark Koratty, Thrissur</strong></p>
+          \<p>\<strong>Loyal IT Solutions, Infopark Koratty, Thrissur\</strong>\</p>
   
-          <p>
+          \<p>
             Developed and customized Odoo ERP modules covering CRM,
             sales, project management and accounting. Improved
             business workflows through front-end and back-end
             customization and automation.
-          </p>
+          \</p>
   
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Odoo ERP</span>
-            <span class="tag">CRM</span>
-            <span class="tag">ERP</span>
-            <span class="tag">Workflow Automation</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Python\</span>
+            \<span class="tag">Odoo ERP\</span>
+            \<span class="tag">CRM\</span>
+            \<span class="tag">ERP\</span>
+            \<span class="tag">Workflow Automation\</span>
+          \</div>
   
-        </div>
+        \</div>
   
   
-        <div class="timeline-item">
+        \<div class="timeline-item">
   
-          <div class="year">2022 — 6 MONTHS</div>
+          \<div class="year">2022 — 6 MONTHS\</div>
   
-          <h3>Odoo Developer Trainee</h3>
+          \<h3>Odoo Developer Trainee\</h3>
   
-          <p><strong>Cybrosys Technologies Pvt. Ltd., Calicut</strong></p>
+          \<p>\<strong>Cybrosys Technologies Pvt. Ltd., Calicut\</strong>\</p>
   
-          <p>
+          \<p>
             Developed and customized business management
             applications, debugging existing ERP systems,
             implementing new features and supporting client-specific
             requirements.
-          </p>
+          \</p>
   
-          <div class="tags">
-            <span class="tag">Python</span>
-            <span class="tag">Odoo</span>
-            <span class="tag">ERP Development</span>
-            <span class="tag">Debugging</span>
-          </div>
+          \<div class="tags">
+            \<span class="tag">Python\</span>
+            \<span class="tag">Odoo\</span>
+            \<span class="tag">ERP Development\</span>
+            \<span class="tag">Debugging\</span>
+          \</div>
   
-        </div>
+        \</div>
   
-      </div>
+      \</div>
   
-    </div>
+    \</div>
   
-  </section>
+  \</section>
 
-  <!-- INTERACTIVE 3D BIOMEDICAL MONITORING -->
+  \<!-- INTERACTIVE 3D BIOMEDICAL MONITORING -->
 
-  <section id="biomedical-3d">
+  \<section id="biomedical-3d">
   
-    <div class="container">
+    \<div class="container">
   
-      <div class="section-title">
-        <div class="section-label">Biomedical Monitoring</div>
-        <h2>Interactive ECG & PPG<br>Monitoring System.</h2>
-      </div>
+      \<div class="section-title">
+        \<div class="section-label">Biomedical Monitoring\</div>
+        \<h2>Interactive ECG & PPG\<br>Monitoring System.\</h2>
+      \</div>
   
-      <div class="medical-3d">
+      \<div class="medical-3d">
   
-        <div class="medical-label medical-label-one">
-          <strong>ECG</strong>
+        \<div class="medical-label medical-label-one">
+          \<strong>ECG\</strong>
           Real-Time Cardiac Signal
-        </div>
+        \</div>
   
-        <div class="medical-label medical-label-two">
-          <strong>PPG</strong>
+        \<div class="medical-label medical-label-two">
+          \<strong>PPG\</strong>
           Pulse Waveform
-        </div>
+        \</div>
   
-        <div class="medical-label medical-label-three">
-          <strong>BLUETOOTH</strong>
+        \<div class="medical-label medical-label-three">
+          \<strong>BLUETOOTH\</strong>
           Wireless Sensor Data
-        </div>
+        \</div>
   
-        <div class="medical-label medical-label-four">
-          <strong>ANDROID</strong>
+        \<div class="medical-label medical-label-four">
+          \<strong>ANDROID\</strong>
           Mobile Health Monitoring
-        </div>
+        \</div>
   
-        <div id="medical3d"></div>
+        \<div id="medical3d">\</div>
   
-        <div class="medical-help">
+        \<div class="medical-help">
           ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
-        </div>
+        \</div>
   
-      </div>
+      \</div>
   
-    </div>
+    \</div>
   
-  </section>
+  \</section>
 
 
-  <!-- EDUCATION -->
+  \<!-- EDUCATION -->
 
-  <section id="education">
+  \<section id="education">
 
-    <div class="container">
+    \<div class="container">
 
-      <div class="section-title">
+      \<div class="section-title">
 
-        <div class="section-label">Education</div>
+        \<div class="section-label">Education\</div>
 
-        <h2>Academic journey.</h2>
+        \<h2>Academic journey.\</h2>
 
-      </div>
+      \</div>
 
 
-      <div class="timeline">
+      \<div class="timeline">
 
-        <div class="timeline-item">
+        \<div class="timeline-item">
 
-          <div class="year">M.S. by RESEARCH</div>
+          \<div class="year">M.S. by RESEARCH\</div>
 
-          <h3>M.S. in Electrical Engineering</h3>
-          <p>Indian Institute Of Technology–Palakkad (IIT–Palakkad)</p>
+          \<h3>M.S. in Electrical Engineering\</h3>
+          \<p>Indian Institute Of Technology–Palakkad (IIT–Palakkad)\</p>
 
-          <p>
+          \<p>
             Research in computer vision, machine learning and
             Embedded AI for intelligent transportation systems.
-          </p>
+          \</p>
 
-        </div>
+        \</div>
 
 
-        <div class="timeline-item">
+        \<div class="timeline-item">
 
-          <div class="year">UNDERGRADUATE</div>
+          \<div class="year">UNDERGRADUATE\</div>
 
-          <h3>B.Tech - Computer Science Engineering</h3>
-          <p>APJ Abdul Kalam Technological University</p>
-          <p>University in Thiruvananthapuram, Kerala</p>
+          \<h3>B.Tech - Computer Science Engineering\</h3>
+          \<p>APJ Abdul Kalam Technological University\</p>
+          \<p>University in Thiruvananthapuram, Kerala\</p>
 
-          <p>
+          \<p>
             Engineering background with a strong foundation in electrical engineering and emerging technologies.
-          </p>
+          \</p>
 
-        </div>
+        \</div>
 
-      </div>
+      \</div>
 
-    </div>
+    \</div>
 
-  </section>
+  \</section>
 
 
-  <!-- CONTACT -->
+  \<!-- CONTACT -->
 
-  <section id="contact">
+  \<section id="contact">
 
-  <div class="container">
+  \<div class="container">
 
-    <div class="contact">
+    \<div class="contact">
 
-      <div class="section-label">Contact</div>
+      \<div class="section-label">Contact\</div>
 
-      <h2>Let's connect.</h2>
+      \<h2>Let's connect.\</h2>
 
-      <p>
+      \<p>
         Interested in computer vision, embedded AI,
         deep learning, FPGA acceleration or research
         collaborations? Feel free to connect.
-      </p>
+      \</p>
 
-      <div class="contact-info">
+      \<div class="contact-info">
 
-        <p>
-          📞 <strong>Phone:</strong>
-          <a href="tel:+919645291533">+91 96452 91533</a>
-        </p>
+        \<p>
+          📞 \<strong>Phone:\</strong>
+          \<a href="tel:+919645291533">+91 96452 91533\</a>
+        \</p>
 
-        <p>
-          ✉️ <strong>Email:</strong>
-          <a href="mailto:yusranpmoidutty@gmail.com">
-            yusranpmoidutty@gmail.com
-          </a>
-        </p>
+        \<p>
+          ✉️ \<strong>Email:\</strong>
+          \<a href="mailto\:yusranpmoidutty\@gmail.com">
+            yusranpmoidutty\@gmail.com
+          \</a>
+        \</p>
 
-        <p>
-          🔗 <strong>LinkedIn:</strong>
-          <a href="https://www.linkedin.com/in/yusra-moidutty-a90688203/"
-             target="_blank">
+        \<p>
+          🔗 \<strong>LinkedIn:\</strong>
+          \<a href="[https://www.linkedin.com/in/yusra-moidutty-a90688203/](https://www.linkedin.com/in/yusra-moidutty-a90688203/)"
+             target="\_blank">
             LinkedIn Profile
-          </a>
-        </p>
+          \</a>
+        \</p>
 
-        <p>
-          🎓 <strong>IIT Palakkad:</strong>
-          <a href="https://iitpkd.ac.in/people/122413010"
-             target="_blank">
+        \<p>
+          🎓 \<strong>IIT Palakkad:\</strong>
+          \<a href="[https://iitpkd.ac.in/people/122413010](https://iitpkd.ac.in/people/122413010)"
+             target="\_blank">
             IIT Palakkad Profile
-          </a>
-        </p>
+          \</a>
+        \</p>
 
-        </div>
+        \</div>
 
-      </div>
+      \</div>
 
-    </div>
+    \</div>
 
-  </section>  
+  \</section>  
 
 
-  <!-- FOOTER -->
+  \<!-- FOOTER -->
 
-  <footer>
+  \<footer>
 
-    <div class="container">
+    \<div class="container">
 
       © 2026 Yusra Moidutty. All rights reserved.
 
-    </div>
+    \</div>
 
-  </footer>
+  \</footer>
 
-        <script type="module">
+        \<script type="module">
 
-import * as THREE from "three";
+import \* as THREE from "three";
 
 import { OrbitControls }
 from "three/addons/controls/OrbitControls.js";
 
 
-/* =========================
+/\* =========================
    BASIC SETUP
-   ========================= */
+   \========================= \*/
 
 const container = document.getElementById("vision3d");
 
@@ -1853,9 +1705,9 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x08090d);
 
 
-/* =========================
+/\* =========================
    CAMERA
-   ========================= */
+   \========================= \*/
 
 const camera = new THREE.PerspectiveCamera(
   45,
@@ -1867,9 +1719,9 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.set(7, 5, 9);
 
 
-/* =========================
+/\* =========================
    RENDERER
-   ========================= */
+   \========================= \*/
 
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
@@ -1877,7 +1729,7 @@ const renderer = new THREE.WebGLRenderer({
 });
 
 renderer.setPixelRatio(
-  Math.min(window.devicePixelRatio, 2)
+  Math.min(window\.devicePixelRatio, 2)
 );
 
 renderer.setSize(
@@ -1893,9 +1745,9 @@ renderer.shadowMap.type =
 container.appendChild(renderer.domElement);
 
 
-/* =========================
+/\* =========================
    CONTROLS
-   ========================= */
+   \========================= \*/
 
 const controls = new OrbitControls(
   camera,
@@ -1916,9 +1768,9 @@ controls.maxPolarAngle =
   Math.PI / 2.05;
 
 
-/* =========================
+/\* =========================
    LIGHTING
-   ========================= */
+   \========================= \*/
 
 const ambientLight =
   new THREE.AmbientLight(
@@ -1978,9 +1830,9 @@ cyanLight.position.set(
 scene.add(cyanLight);
 
 
-/* =========================
+/\* =========================
    ROAD
-   ========================= */
+   \========================= \*/
 
 const roadMaterial =
   new THREE.MeshStandardMaterial({
@@ -2011,9 +1863,9 @@ road.receiveShadow = true;
 scene.add(road);
 
 
-/* =========================
+/\* =========================
    ROAD SIDE LINES
-   ========================= */
+   \========================= \*/
 
 function createRoadLine(x) {
 
@@ -2052,9 +1904,9 @@ createRoadLine(-4.2);
 createRoadLine(4.2);
 
 
-/* =========================
+/\* =========================
    ROAD CENTER MARKINGS
-   ========================= */
+   \========================= \*/
 
 const centerMaterial =
   new THREE.MeshBasicMaterial({
@@ -2087,9 +1939,9 @@ for (let z = -7; z < 8; z += 2) {
 }
 
 
-/* =========================
+/\* =========================
    VEHICLE
-   ========================= */
+   \========================= \*/
 
 const vehicle =
   new THREE.Group();
@@ -2097,7 +1949,7 @@ const vehicle =
 scene.add(vehicle);
 
 
-/* Main body */
+/\* Main body \*/
 
 const bodyGeometry =
   new THREE.BoxGeometry(
@@ -2126,7 +1978,7 @@ body.castShadow = true;
 vehicle.add(body);
 
 
-/* Roof */
+/\* Roof \*/
 
 const roofGeometry =
   new THREE.BoxGeometry(
@@ -2159,7 +2011,7 @@ roof.castShadow = true;
 vehicle.add(roof);
 
 
-/* Windows */
+/\* Windows \*/
 
 const windowMaterial =
   new THREE.MeshStandardMaterial({
@@ -2179,7 +2031,7 @@ const frontWindow =
     windowMaterial
   );
 
-frontWindow.position.set(
+frontWindow\.position.set(
   0,
   1.02,
   -0.82
@@ -2198,7 +2050,7 @@ const rearWindow =
     windowMaterial
   );
 
-rearWindow.position.set(
+rearWindow\.position.set(
   0,
   1.02,
   1.12
@@ -2207,9 +2059,9 @@ rearWindow.position.set(
 vehicle.add(rearWindow);
 
 
-/* =========================
+/\* =========================
    WHEELS
-   ========================= */
+   \========================= \*/
 
 function createWheel(x, z) {
 
@@ -2255,9 +2107,9 @@ createWheel(-1.25, 1.25);
 createWheel(1.25, 1.25);
 
 
-/* =========================
+/\* =========================
    HEADLIGHTS
-   ========================= */
+   \========================= \*/
 
 const headlightMaterial =
   new THREE.MeshBasicMaterial({
@@ -2292,9 +2144,9 @@ createHeadlight(-0.7);
 createHeadlight(0.7);
 
 
-/* =========================
+/\* =========================
    CAMERA SENSOR
-   ========================= */
+   \========================= \*/
 
 const sensor =
   new THREE.Group();
@@ -2325,7 +2177,7 @@ const sensorBody =
 sensor.add(sensorBody);
 
 
-/* Sensor lens */
+/\* Sensor lens \*/
 
 const lens =
   new THREE.Mesh(
@@ -2344,9 +2196,9 @@ lens.position.z = -0.2;
 sensor.add(lens);
 
 
-/* =========================
+/\* =========================
    DETECTION / VISION BEAMS
-   ========================= */
+   \========================= \*/
 
 const beamMaterial =
   new THREE.MeshBasicMaterial({
@@ -2385,9 +2237,9 @@ beam.position.set(
 vehicle.add(beam);
 
 
-/* =========================
+/\* =========================
    FLOATING DATA POINTS
-   ========================= */
+   \========================= \*/
 
 const pointMaterial =
   new THREE.MeshBasicMaterial({
@@ -2408,18 +2260,18 @@ for (let i = 0; i < 20; i++) {
     );
 
   point.position.set(
-    (Math.random() - 0.5) * 8,
-    Math.random() * 2,
-    (Math.random() - 0.5) * 12
+    (Math.random() - 0.5) \* 8,
+    Math.random() \* 2,
+    (Math.random() - 0.5) \* 12
   );
 
   scene.add(point);
 }
 
 
-/* =========================
+/\* =========================
    VEHICLE START POSITION
-   ========================= */
+   \========================= \*/
 
 vehicle.position.set(
   0,
@@ -2428,11 +2280,11 @@ vehicle.position.set(
 );
 
 
-/* =========================
+/\* =========================
    RESIZE
-   ========================= */
+   \========================= \*/
 
-window.addEventListener(
+window\.addEventListener(
   "resize",
   () => {
 
@@ -2451,9 +2303,9 @@ window.addEventListener(
 );
 
 
-/* =========================
+/\* =========================
    ANIMATION
-   ========================= */
+   \========================= \*/
 
 const clock =
   new THREE.Clock();
@@ -2469,29 +2321,29 @@ function animate() {
     clock.getElapsedTime();
 
 
-  /*
-   * Subtle vehicle movement
-   */
+  /\*
+   \* Subtle vehicle movement
+   \*/
 
   vehicle.position.y =
-    Math.sin(elapsed * 1.5) * 0.025;
+    Math.sin(elapsed \* 1.5) \* 0.025;
 
 
-  /*
-   * Sensor scanning
-   */
+  /\*
+   \* Sensor scanning
+   \*/
 
   sensor.rotation.y =
-    Math.sin(elapsed * 2) * 0.25;
+    Math.sin(elapsed \* 2) \* 0.25;
 
 
-  /*
-   * Slight beam animation
-   */
+  /\*
+   \* Slight beam animation
+   \*/
 
   beam.material.opacity =
     0.10 +
-    Math.sin(elapsed * 2) * 0.035;
+    Math.sin(elapsed \* 2) \* 0.035;
 
 
   controls.update();
@@ -2506,11 +2358,9 @@ function animate() {
 
 animate();
 
-</script>
-
-  
+\</script>
   
 
 
-</body>
-</html>
+\</body>
+\</html>
