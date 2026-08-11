@@ -293,6 +293,318 @@
       margin-bottom: 28px;
     }
 
+    /* =========================
+   3D TRANSPORTATION SCENE
+   ========================= */
+
+    .transport-3d {
+      position: relative;
+      height: 420px;
+      margin-top: 35px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(139,124,255,0.18), transparent 35%),
+        linear-gradient(#0b0d14 0%, #10131b 55%, #08090d 100%);
+      perspective: 900px;
+    }
+    
+    /* Horizon */
+    .transport-horizon {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 38%;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+    }
+    
+    /* Road */
+    .road-3d {
+      position: absolute;
+      width: 75%;
+      height: 100%;
+      left: 12.5%;
+      top: 10%;
+      transform:
+        rotateX(65deg)
+        translateY(60px)
+        scaleY(1.25);
+    
+      transform-origin: center bottom;
+    
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255,255,255,0.025) 8%,
+          rgba(255,255,255,0.04) 50%,
+          rgba(255,255,255,0.025) 92%,
+          transparent 100%
+        ),
+        #181b23;
+    
+      border-left: 2px solid rgba(94,231,223,0.55);
+      border-right: 2px solid rgba(94,231,223,0.55);
+    
+      box-shadow:
+        0 -20px 60px rgba(139,124,255,0.12),
+        inset 0 0 80px rgba(0,0,0,0.8);
+    }
+    
+    /* Road center line */
+    .road-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 5px;
+      height: 100%;
+    
+      transform: translateX(-50%);
+    
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.9) 0px,
+        rgba(255,255,255,0.9) 45px,
+        transparent 45px,
+        transparent 85px
+      );
+    }
+    
+    /* Road boundary detection lines */
+    .boundary-left,
+    .boundary-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 4px;
+    
+      background: var(--accent2);
+    
+      box-shadow:
+        0 0 12px var(--accent2),
+        0 0 30px rgba(94,231,223,0.45);
+    }
+    
+    .boundary-left {
+      left: 14%;
+    }
+    
+    .boundary-right {
+      right: 14%;
+    }
+    
+    /* Vehicle */
+    .vehicle {
+      position: absolute;
+      width: 90px;
+      height: 42px;
+      left: 50%;
+      bottom: 70px;
+    
+      transform: translateX(-50%);
+    
+      background: linear-gradient(
+        180deg,
+        #d9dce5,
+        #676b78
+      );
+    
+      border-radius: 18px 18px 8px 8px;
+    
+      box-shadow:
+        0 15px 35px rgba(0,0,0,0.7),
+        0 0 30px rgba(139,124,255,0.25);
+    
+      z-index: 5;
+    }
+    
+    /* Vehicle roof */
+    .vehicle::before {
+      content: "";
+      position: absolute;
+    
+      width: 52px;
+      height: 22px;
+    
+      left: 19px;
+      top: -13px;
+    
+      background: #777b88;
+    
+      border-radius: 15px 15px 3px 3px;
+    }
+    
+    /* Headlights */
+    .vehicle::after {
+      content: "";
+      position: absolute;
+    
+      width: 12px;
+      height: 6px;
+    
+      left: 10px;
+      top: 7px;
+    
+      background: #ffffff;
+    
+      border-radius: 5px;
+    
+      box-shadow:
+        58px 0 0 #ffffff,
+        -30px 10px 30px rgba(255,255,255,0.25),
+        88px 10px 30px rgba(255,255,255,0.25);
+    }
+    
+    /* Floating information cards */
+    .ai-label {
+      position: absolute;
+    
+      padding: 10px 14px;
+    
+      background: rgba(8,9,13,0.78);
+      backdrop-filter: blur(10px);
+    
+      border: 1px solid rgba(94,231,223,0.3);
+      border-radius: 9px;
+    
+      color: #dfe1e8;
+    
+      font-size: 11px;
+      letter-spacing: 1px;
+    
+      z-index: 10;
+    
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+    
+    .ai-label strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    
+    .label-one {
+      top: 18%;
+      left: 7%;
+    }
+    
+    .label-two {
+      top: 28%;
+      right: 7%;
+    }
+    
+    .label-three {
+      bottom: 15%;
+      left: 8%;
+    }
+    
+    .label-four {
+      bottom: 18%;
+      right: 8%;
+    }
+    
+    /* Detection box */
+    .detection-box {
+      position: absolute;
+    
+      width: 125px;
+      height: 95px;
+    
+      left: 50%;
+      top: 46%;
+    
+      transform: translate(-50%, -50%);
+    
+      border: 1px solid var(--accent2);
+    
+      box-shadow:
+        0 0 15px rgba(94,231,223,0.3);
+    
+      z-index: 8;
+    }
+    
+    .detection-box span {
+      position: absolute;
+    
+      top: -23px;
+      left: -1px;
+    
+      padding: 3px 7px;
+    
+      background: var(--accent2);
+      color: #08090d;
+    
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+    
+    /* Small perspective grid */
+    .scene-grid {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 42%;
+    
+      background:
+        linear-gradient(
+          rgba(139,124,255,0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(139,124,255,0.08) 1px,
+          transparent 1px
+        );
+    
+      background-size: 45px 45px;
+    
+      transform:
+        perspective(300px)
+        rotateX(55deg);
+    
+      transform-origin: bottom;
+    
+      opacity: 0.35;
+    }
+    
+    /* Mobile */
+    @media (max-width: 800px) {
+    
+      .transport-3d {
+        height: 340px;
+      }
+    
+      .ai-label {
+        font-size: 9px;
+        padding: 7px 9px;
+      }
+    
+      .label-one {
+        left: 3%;
+      }
+    
+      .label-two {
+        right: 3%;
+      }
+    
+      .label-three {
+        left: 3%;
+      }
+    
+      .label-four {
+        right: 3%;
+      }
+    
+      .vehicle {
+        transform: translateX(-50%) scale(0.8);
+      }
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -703,6 +1015,59 @@
           <span class="tag">FPGA / PYNQ</span>
 
         </div>
+        <!-- 3D TRANSPORTATION VISUAL -->
+
+          <div class="transport-3d">
+          
+            <div class="transport-horizon"></div>
+          
+            <div class="scene-grid"></div>
+          
+            <div class="road-3d">
+          
+              <div class="road-center"></div>
+          
+              <div class="boundary-left"></div>
+              <div class="boundary-right"></div>
+          
+            </div>
+          
+          
+            <!-- Vehicle -->
+          
+            <div class="vehicle"></div>
+          
+          
+            <!-- AI Detection Box -->
+          
+            <div class="detection-box">
+              <span>ROAD DETECTED</span>
+            </div>
+          
+          
+            <!-- AI Information -->
+          
+            <div class="ai-label label-one">
+              <strong>ROAD SEGMENTATION</strong>
+              Pixel-Level Analysis
+            </div>
+          
+            <div class="ai-label label-two">
+              <strong>ADAS</strong>
+              Intelligent Road Understanding
+            </div>
+          
+            <div class="ai-label label-three">
+              <strong>EDGE AI</strong>
+              Real-Time Processing
+            </div>
+          
+            <div class="ai-label label-four">
+              <strong>FPGA</strong>
+              Hardware Acceleration
+            </div>
+          
+          </div>
 
 
         <div class="metrics">
