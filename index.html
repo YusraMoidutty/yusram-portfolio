@@ -1,36 +1,38 @@
-\<!DOCTYPE html>
-\<html lang="en">
-\<head>
-  \<meta charset="UTF-8">
-  \<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
 
-  \<title>Yusra Moidutty | Computer Vision & Embedded AI\</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  \<meta name="description"
-        content="Yusra Moidutty — Computer Vision, Deep Learning, FPGA and Embedded AI Researcher.">
+  <title>Yusra Moidutty | Computer Vision & Embedded AI</title>
 
-  \<style>
-    \* {
+  <meta name="description"
+    content="Yusra Moidutty — Computer Vision, Deep Learning, FPGA and Embedded AI Researcher.">
+
+  <style>
+
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
 
-    \:root {
-      \--bg: #08090d;
-      \--card: #101218;
-      \--card2: #14161e;
-      \--text: #f5f5f7;
-      \--muted: #a5a7b0;
-      \--line: rgba(255,255,255,0.09);
-      \--accent: #8b7cff;
-      \--accent2: #5ee7df;
+    :root {
+      --bg: #08090d;
+      --card: #101218;
+      --card2: #14161e;
+      --text: #f5f5f7;
+      --muted: #a5a7b0;
+      --line: rgba(255, 255, 255, 0.09);
+      --accent: #8b7cff;
+      --accent2: #5ee7df;
     }
 
     body {
       font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Arial, sans-serif;
+        Roboto, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -46,7 +48,9 @@
       margin: auto;
     }
 
-    /\* NAVBAR \*/
+    /* =========================
+       NAVBAR
+    ========================= */
 
     nav {
       position: fixed;
@@ -55,7 +59,7 @@
       width: 100%;
       z-index: 1000;
       backdrop-filter: blur(16px);
-      background: rgba(8,9,13,0.78);
+      background: rgba(8, 9, 13, 0.78);
       border-bottom: 1px solid var(--line);
     }
 
@@ -88,11 +92,13 @@
       transition: 0.3s;
     }
 
-    .nav-links a\:hover {
+    .nav-links a:hover {
       color: white;
     }
 
-    /\* HERO \*/
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 100vh;
@@ -108,7 +114,7 @@
       position: absolute;
       width: 500px;
       height: 500px;
-      background: rgba(139,124,255,0.12);
+      background: rgba(139, 124, 255, 0.12);
       filter: blur(120px);
       border-radius: 50%;
       top: 5%;
@@ -170,7 +176,7 @@
       color: black;
     }
 
-    .btn-primary\:hover {
+    .btn-primary:hover {
       transform: translateY(-2px);
     }
 
@@ -179,7 +185,7 @@
       color: white;
     }
 
-    .btn-secondary\:hover {
+    .btn-secondary:hover {
       background: var(--card2);
     }
 
@@ -194,7 +200,7 @@
       border-radius: 50%;
       padding: 7px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 80px rgba(139,124,255,0.18);
+      box-shadow: 0 0 80px rgba(139, 124, 255, 0.18);
     }
 
     .profile img {
@@ -205,7 +211,9 @@
       border: 5px solid var(--bg);
     }
 
-    /\* SECTIONS \*/
+    /* =========================
+       SECTIONS
+    ========================= */
 
     section {
       padding: 110px 0;
@@ -229,6 +237,10 @@
       line-height: 1.1;
       letter-spacing: -2px;
     }
+
+    /* =========================
+       ABOUT
+    ========================= */
 
     .about-grid {
       display: grid;
@@ -257,7 +269,7 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .info-item\:last-child {
+    .info-item:last-child {
       border-bottom: none;
     }
 
@@ -273,7 +285,9 @@
       font-size: 14px;
     }
 
-    /\* RESEARCH \*/
+    /* =========================
+       RESEARCH
+    ========================= */
 
     .research-card {
       background: linear-gradient(145deg, #11131a, #0d0f14);
@@ -293,317 +307,9 @@
       margin-bottom: 28px;
     }
 
-    /\* =========================
-   3D TRANSPORTATION SCENE
-   \========================= \*/
-
-    .transport-3d {
-      position: relative;
-      height: 420px;
-      margin-top: 35px;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 50% 20%, rgba(139,124,255,0.18), transparent 35%),
-        linear-gradient(#0b0d14 0%, #10131b 55%, #08090d 100%);
-      perspective: 900px;
-    }
-    
-    /\* Horizon \*/
-    .transport-horizon {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 38%;
-      height: 1px;
-      background: rgba(255,255,255,0.15);
-    }
-    
-    /\* Road \*/
-    .road-3d {
-      position: absolute;
-      width: 75%;
-      height: 100%;
-      left: 12.5%;
-      top: 10%;
-      transform:
-        rotateX(65deg)
-        translateY(60px)
-        scaleY(1.25);
-    
-      transform-origin: center bottom;
-    
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          rgba(255,255,255,0.025) 8%,
-          rgba(255,255,255,0.04) 50%,
-          rgba(255,255,255,0.025) 92%,
-          transparent 100%
-        ),
-        \#181b23;
-    
-      border-left: 2px solid rgba(94,231,223,0.55);
-      border-right: 2px solid rgba(94,231,223,0.55);
-    
-      box-shadow:
-        0 -20px 60px rgba(139,124,255,0.12),
-        inset 0 0 80px rgba(0,0,0,0.8);
-    }
-    
-    /\* Road center line \*/
-    .road-center {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: 5px;
-      height: 100%;
-    
-      transform: translateX(-50%);
-    
-      background: repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.9) 0px,
-        rgba(255,255,255,0.9) 45px,
-        transparent 45px,
-        transparent 85px
-      );
-    }
-    
-    /\* Road boundary detection lines \*/
-    .boundary-left,
-    .boundary-right {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      width: 4px;
-    
-      background: var(--accent2);
-    
-      box-shadow:
-        0 0 12px var(--accent2),
-        0 0 30px rgba(94,231,223,0.45);
-    }
-    
-    .boundary-left {
-      left: 14%;
-    }
-    
-    .boundary-right {
-      right: 14%;
-    }
-    
-    /\* Vehicle \*/
-    .vehicle {
-      position: absolute;
-      width: 90px;
-      height: 42px;
-      left: 50%;
-      bottom: 70px;
-    
-      transform: translateX(-50%);
-    
-      background: linear-gradient(
-        180deg,
-        \#d9dce5,
-        \#676b78
-      );
-    
-      border-radius: 18px 18px 8px 8px;
-    
-      box-shadow:
-        0 15px 35px rgba(0,0,0,0.7),
-        0 0 30px rgba(139,124,255,0.25);
-    
-      z-index: 5;
-    }
-    
-    /\* Vehicle roof \*/
-    .vehicle::before {
-      content: "";
-      position: absolute;
-    
-      width: 52px;
-      height: 22px;
-    
-      left: 19px;
-      top: -13px;
-    
-      background: #777b88;
-    
-      border-radius: 15px 15px 3px 3px;
-    }
-    
-    /\* Headlights \*/
-    .vehicle::after {
-      content: "";
-      position: absolute;
-    
-      width: 12px;
-      height: 6px;
-    
-      left: 10px;
-      top: 7px;
-    
-      background: #ffffff;
-    
-      border-radius: 5px;
-    
-      box-shadow:
-        58px 0 0 #ffffff,
-        -30px 10px 30px rgba(255,255,255,0.25),
-        88px 10px 30px rgba(255,255,255,0.25);
-    }
-    
-    /\* Floating information cards \*/
-    .ai-label {
-      position: absolute;
-    
-      padding: 10px 14px;
-    
-      background: rgba(8,9,13,0.78);
-      backdrop-filter: blur(10px);
-    
-      border: 1px solid rgba(94,231,223,0.3);
-      border-radius: 9px;
-    
-      color: #dfe1e8;
-    
-      font-size: 11px;
-      letter-spacing: 1px;
-    
-      z-index: 10;
-    
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-    }
-    
-    .ai-label strong {
-      display: block;
-      color: var(--accent2);
-      font-size: 12px;
-      margin-bottom: 2px;
-    }
-    
-    .label-one {
-      top: 18%;
-      left: 7%;
-    }
-    
-    .label-two {
-      top: 28%;
-      right: 7%;
-    }
-    
-    .label-three {
-      bottom: 15%;
-      left: 8%;
-    }
-    
-    .label-four {
-      bottom: 18%;
-      right: 8%;
-    }
-    
-    /\* Detection box \*/
-    .detection-box {
-      position: absolute;
-    
-      width: 125px;
-      height: 95px;
-    
-      left: 50%;
-      top: 46%;
-    
-      transform: translate(-50%, -50%);
-    
-      border: 1px solid var(--accent2);
-    
-      box-shadow:
-        0 0 15px rgba(94,231,223,0.3);
-    
-      z-index: 8;
-    }
-    
-    .detection-box span {
-      position: absolute;
-    
-      top: -23px;
-      left: -1px;
-    
-      padding: 3px 7px;
-    
-      background: var(--accent2);
-      color: #08090d;
-    
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-    
-    /\* Small perspective grid \*/
-    .scene-grid {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 42%;
-    
-      background:
-        linear-gradient(
-          rgba(139,124,255,0.08) 1px,
-          transparent 1px
-        ),
-        linear-gradient(
-          90deg,
-          rgba(139,124,255,0.08) 1px,
-          transparent 1px
-        );
-    
-      background-size: 45px 45px;
-    
-      transform:
-        perspective(300px)
-        rotateX(55deg);
-    
-      transform-origin: bottom;
-    
-      opacity: 0.35;
-    }
-    
-    /\* Mobile \*/
-    @media (max-width: 800px) {
-    
-      .transport-3d {
-        height: 340px;
-      }
-    
-      .ai-label {
-        font-size: 9px;
-        padding: 7px 9px;
-      }
-    
-      .label-one {
-        left: 3%;
-      }
-    
-      .label-two {
-        right: 3%;
-      }
-    
-      .label-three {
-        left: 3%;
-      }
-    
-      .label-four {
-        right: 3%;
-      }
-    
-      .vehicle {
-        transform: translateX(-50%) scale(0.8);
-      }
-    }
+    /* =========================
+       TAGS
+    ========================= */
 
     .tags {
       display: flex;
@@ -617,14 +323,294 @@
       border-radius: 100px;
       color: #d4d5db;
       font-size: 12px;
-      background: rgba(255,255,255,0.025);
+      background: rgba(255, 255, 255, 0.025);
     }
 
-    /\* METRICS \*/
+    /* =====================================================
+       3D TRANSPORTATION SCENE
+    ===================================================== */
+
+    .transport-3d {
+      position: relative;
+      height: 420px;
+      margin-top: 35px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(139, 124, 255, 0.18),
+          transparent 35%
+        ),
+        linear-gradient(
+          #0b0d14 0%,
+          #10131b 55%,
+          #08090d 100%
+        );
+
+      perspective: 900px;
+    }
+
+    .transport-horizon {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 38%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .road-3d {
+      position: absolute;
+      width: 75%;
+      height: 100%;
+      left: 12.5%;
+      top: 10%;
+
+      transform:
+        rotateX(65deg)
+        translateY(60px)
+        scaleY(1.25);
+
+      transform-origin: center bottom;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.025) 8%,
+          rgba(255, 255, 255, 0.04) 50%,
+          rgba(255, 255, 255, 0.025) 92%,
+          transparent 100%
+        ),
+        #181b23;
+
+      border-left: 2px solid rgba(94, 231, 223, 0.55);
+      border-right: 2px solid rgba(94, 231, 223, 0.55);
+
+      box-shadow:
+        0 -20px 60px rgba(139, 124, 255, 0.12),
+        inset 0 0 80px rgba(0, 0, 0, 0.8);
+    }
+
+    .road-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 5px;
+      height: 100%;
+      transform: translateX(-50%);
+
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.9) 0px,
+          rgba(255, 255, 255, 0.9) 45px,
+          transparent 45px,
+          transparent 85px
+        );
+    }
+
+    .boundary-left,
+    .boundary-right {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 4px;
+
+      background: var(--accent2);
+
+      box-shadow:
+        0 0 12px var(--accent2),
+        0 0 30px rgba(94, 231, 223, 0.45);
+    }
+
+    .boundary-left {
+      left: 14%;
+    }
+
+    .boundary-right {
+      right: 14%;
+    }
+
+    .vehicle {
+      position: absolute;
+      width: 90px;
+      height: 42px;
+      left: 50%;
+      bottom: 70px;
+
+      transform: translateX(-50%);
+
+      background: linear-gradient(
+        180deg,
+        #d9dce5,
+        #676b78
+      );
+
+      border-radius: 18px 18px 8px 8px;
+
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.7),
+        0 0 30px rgba(139, 124, 255, 0.25);
+
+      z-index: 5;
+    }
+
+    .vehicle::before {
+      content: "";
+      position: absolute;
+
+      width: 52px;
+      height: 22px;
+
+      left: 19px;
+      top: -13px;
+
+      background: #777b88;
+      border-radius: 15px 15px 3px 3px;
+    }
+
+    .vehicle::after {
+      content: "";
+      position: absolute;
+
+      width: 12px;
+      height: 6px;
+
+      left: 10px;
+      top: 7px;
+
+      background: #ffffff;
+
+      border-radius: 5px;
+
+      box-shadow:
+        58px 0 0 #ffffff,
+        -30px 10px 30px rgba(255, 255, 255, 0.25),
+        88px 10px 30px rgba(255, 255, 255, 0.25);
+    }
+
+    .ai-label {
+      position: absolute;
+
+      padding: 10px 14px;
+
+      background: rgba(8, 9, 13, 0.78);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(94, 231, 223, 0.3);
+      border-radius: 9px;
+
+      color: #dfe1e8;
+
+      font-size: 11px;
+      letter-spacing: 1px;
+
+      z-index: 10;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .ai-label strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .label-one {
+      top: 18%;
+      left: 7%;
+    }
+
+    .label-two {
+      top: 28%;
+      right: 7%;
+    }
+
+    .label-three {
+      bottom: 15%;
+      left: 8%;
+    }
+
+    .label-four {
+      bottom: 18%;
+      right: 8%;
+    }
+
+    .detection-box {
+      position: absolute;
+
+      width: 125px;
+      height: 95px;
+
+      left: 50%;
+      top: 46%;
+
+      transform: translate(-50%, -50%);
+
+      border: 1px solid var(--accent2);
+
+      box-shadow:
+        0 0 15px rgba(94, 231, 223, 0.3);
+
+      z-index: 8;
+    }
+
+    .detection-box span {
+      position: absolute;
+
+      top: -23px;
+      left: -1px;
+
+      padding: 3px 7px;
+
+      background: var(--accent2);
+      color: #08090d;
+
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .scene-grid {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 42%;
+
+      background:
+        linear-gradient(
+          rgba(139, 124, 255, 0.08) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(139, 124, 255, 0.08) 1px,
+          transparent 1px
+        );
+
+      background-size: 45px 45px;
+
+      transform:
+        perspective(300px)
+        rotateX(55deg);
+
+      transform-origin: bottom;
+      opacity: 0.35;
+    }
+
+    /* =========================
+       METRICS
+    ========================= */
 
     .metrics {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
       margin-top: 30px;
     }
@@ -647,11 +633,13 @@
       font-size: 12px;
     }
 
-    /\* PROJECTS \*/
+    /* =========================
+       PROJECTS
+    ========================= */
 
     .projects {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
     }
 
@@ -663,9 +651,9 @@
       transition: 0.3s;
     }
 
-    .project\:hover {
+    .project:hover {
       transform: translateY(-5px);
-      border-color: rgba(139,124,255,0.45);
+      border-color: rgba(139, 124, 255, 0.45);
     }
 
     .project-number {
@@ -686,7 +674,101 @@
       margin-bottom: 20px;
     }
 
-    /\* SKILLS \*/
+    /* =====================================================
+       INTERACTIVE THREE.JS VISION SYSTEM
+    ===================================================== */
+
+    .interactive-3d {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      margin-bottom: 45px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #08090d;
+    }
+
+    #vision3d {
+      width: 100%;
+      height: 100%;
+    }
+
+    #vision3d canvas,
+    #medical3d canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+
+    .scene-title {
+      position: absolute;
+      top: 22px;
+      left: 25px;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .scene-title strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    .scene-title span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .scene-help {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+
+      padding: 8px 15px;
+      border-radius: 100px;
+
+      background: rgba(8, 9, 13, 0.75);
+      border: 1px solid var(--line);
+
+      color: var(--muted);
+      font-size: 11px;
+
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    .scene-status {
+      position: absolute;
+      top: 22px;
+      right: 25px;
+      z-index: 10;
+
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      color: var(--accent2);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 12px var(--accent2);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
 
     .skills {
       display: flex;
@@ -703,7 +785,9 @@
       font-size: 14px;
     }
 
-    /\* EDUCATION \*/
+    /* =========================
+       EDUCATION / EXPERIENCE
+    ========================= */
 
     .timeline {
       border-left: 1px solid var(--line);
@@ -742,7 +826,105 @@
       margin-top: 4px;
     }
 
-    /\* CONTACT \*/
+    /* =====================================================
+       3D BIOMEDICAL PHONE
+    ===================================================== */
+
+    .medical-3d {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      overflow: hidden;
+
+      border-radius: 20px;
+      border: 1px solid var(--line);
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(94, 231, 223, 0.08),
+          transparent 40%
+        ),
+        #07090e;
+    }
+
+    #medical3d {
+      width: 100%;
+      height: 100%;
+    }
+
+    .medical-label {
+      position: absolute;
+      z-index: 10;
+
+      padding: 10px 14px;
+
+      background: rgba(8, 9, 13, 0.8);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(94, 231, 223, 0.25);
+      border-radius: 9px;
+
+      color: var(--muted);
+      font-size: 11px;
+
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+      pointer-events: none;
+    }
+
+    .medical-label strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 12px;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .medical-label-one {
+      top: 15%;
+      left: 6%;
+    }
+
+    .medical-label-two {
+      top: 32%;
+      right: 6%;
+    }
+
+    .medical-label-three {
+      bottom: 28%;
+      left: 5%;
+    }
+
+    .medical-label-four {
+      bottom: 12%;
+      right: 5%;
+    }
+
+    .medical-help {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      z-index: 10;
+
+      padding: 8px 15px;
+      border-radius: 100px;
+
+      background: rgba(8, 9, 13, 0.75);
+      border: 1px solid var(--line);
+
+      color: var(--muted);
+      font-size: 11px;
+
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
       text-align: center;
@@ -750,19 +932,31 @@
       margin: auto;
     }
 
-    .contact p {
+    .contact > p {
       color: var(--muted);
       margin: 20px 0 30px;
     }
 
-    .contact-links {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+    .contact-info {
+      margin-top: 25px;
     }
 
-    /\* FOOTER \*/
+    .contact-info p {
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    .contact-info a {
+      color: var(--accent2);
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       border-top: 1px solid var(--line);
@@ -772,7 +966,9 @@
       font-size: 13px;
     }
 
-    /\* MOBILE \*/
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 800px) {
 
@@ -804,15 +1000,75 @@
       }
 
       .metrics {
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .research-card {
         padding: 28px;
       }
+
+      .transport-3d {
+        height: 340px;
+      }
+
+      .interactive-3d {
+        height: 400px;
+      }
+
+      .medical-3d {
+        height: 430px;
+      }
+
+      .ai-label,
+      .medical-label {
+        font-size: 9px;
+        padding: 7px 9px;
+      }
+
+      .label-one {
+        left: 3%;
+      }
+
+      .label-two {
+        right: 3%;
+      }
+
+      .label-three {
+        left: 3%;
+      }
+
+      .label-four {
+        right: 3%;
+      }
+
+      .medical-label-one {
+        left: 3%;
+      }
+
+      .medical-label-two {
+        right: 3%;
+      }
+
+      .medical-label-three {
+        left: 3%;
+      }
+
+      .medical-label-four {
+        right: 3%;
+      }
+
+      .vehicle {
+        transform: translateX(-50%) scale(0.8);
+      }
+
+      .scene-help,
+      .medical-help {
+        font-size: 9px;
+      }
     }
 
     @media (max-width: 450px) {
+
       .metrics {
         grid-template-columns: 1fr 1fr;
       }
@@ -820,1545 +1076,2470 @@
       section {
         padding: 80px 0;
       }
+
+      .medical-3d {
+        height: 380px;
+      }
+
     }
 
-      /\* =========================
-       INTERACTIVE 3D VISION
-       \========================= \*/
-    
-    .interactive-3d {
-      position: relative;
-      width: 100%;
-      height: 520px;
-      margin-top: 35px;
-      overflow: hidden;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: #08090d;
-    }
-    
-    \#vision3d {
-      width: 100%;
-      height: 100%;
-    }
-    
-    \#vision3d canvas {
-      display: block;
-      width: 100%;
-      height: 100%;
-      touch-action: none;
-    }
-    
-    .scene-title {
-      position: absolute;
-      top: 22px;
-      left: 25px;
-      z-index: 10;
-      pointer-events: none;
-    }
-    
-    .scene-title strong {
-      display: block;
-      color: var(--accent2);
-      font-size: 12px;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-    }
-    
-    .scene-title span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-    
-    .scene-help {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 10;
-    
-      padding: 8px 15px;
-      border-radius: 100px;
-    
-      background: rgba(8,9,13,0.75);
-      border: 1px solid var(--line);
-    
-      color: var(--muted);
-      font-size: 11px;
-    
-      pointer-events: none;
-      white-space: nowrap;
-    }
-    
-    .scene-status {
-      position: absolute;
-      top: 22px;
-      right: 25px;
-      z-index: 10;
-    
-      display: flex;
-      align-items: center;
-      gap: 7px;
-    
-      color: var(--accent2);
-      font-size: 10px;
-      letter-spacing: 1px;
-    }
-    
-    .status-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent2);
-      box-shadow: 0 0 12px var(--accent2);
-    }
-    
-    @media (max-width: 800px) {
-      .interactive-3d {
-        height: 400px;
-      }
-    
-      .scene-help {
-        font-size: 10px;
-      }
-    }
-    
-  \</style>
-  \<script type="importmap">
+  </style>
+
+  <!-- Three.js -->
+  <script type="importmap">
   {
     "imports": {
-      "three": "[https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js](https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js)",
-      "three/addons/": "[https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/](https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/)"
+      "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/"
     }
   }
-  \</script>
-\</head>
+  </script>
 
-\<body>
-
-  \<!-- NAVIGATION -->
-
-  \<nav>
-    \<div class="container nav-inner">
-
-      \<a href="#home" class="logo">
-        Yusra\<span>.\</span>
-      \</a>
-
-      \<ul class="nav-links">
-        \<li>\<a href="#about">About\</a>\</li>
-        \<li>\<a href="#research">Research\</a>\</li>
-        \<li>\<a href="#projects">Projects\</a>\</li>
-        \<li>\<a href="#skills">Skills\</a>\</li>
-        \<li>\<a href="#education">Education\</a>\</li>
-        \<li>\<a href="#contact">Contact\</a>\</li>
-      \</ul>
-
-    \</div>
-  \</nav>
+</head>
 
 
-  \<!-- HERO -->
+<body>
 
-  \<section class="hero" id="home">
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-    \<div class="container hero-grid">
+  <nav>
+    <div class="container nav-inner">
 
-      \<div>
+      <a href="#home" class="logo">
+        Yusra<span>.</span>
+      </a>
 
-        \<div class="eyebrow">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#biomedical-3d">Biomedical</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
           Computer Vision • Deep Learning • Embedded AI
-        \</div>
+        </div>
 
-        \<h1>
-          Hi, I'm\<br>
-          \<span>Yusra Moidutty.\</span>
-        \</h1>
+        <h1>
+          Hi, I'm<br>
+          <span>Yusra Moidutty.</span>
+        </h1>
 
-        \<p class="hero-description">
+        <p class="hero-description">
           Researcher working at the intersection of computer vision,
           deep learning, intelligent transportation systems, FPGA
           acceleration and embedded AI.
-        \</p>
+        </p>
 
-        \<div class="buttons">
+        <div class="buttons">
 
-          \<a href="#research" class="btn btn-primary">
+          <a href="#research" class="btn btn-primary">
             Explore My Research
-          \</a>
+          </a>
 
-          \<!-- \<a href="Yusra\_Moidutty\_CV.pdf"
-             target="\_blank"
-             class="btn btn-secondary">
-            View CV
-          \</a> -->
+        </div>
 
-        \</div>
-
-      \</div>
+      </div>
 
 
-      \<div class="profile-wrapper">
+      <div class="profile-wrapper">
 
-        \<div class="profile">
-          \<img src="photo.jpeg" alt="Yusra Moidutty">
-        \</div>
+        <div class="profile">
+          <img src="photo.jpeg" alt="Yusra Moidutty">
+        </div>
 
-      \</div>
+      </div>
 
-    \</div>
+    </div>
 
-  \</section>
-
-
-  \<!-- ABOUT -->
-
-  \<section id="about">
-
-    \<div class="container">
-
-      \<div class="section-title">
-
-        \<div class="section-label">About Me\</div>
-
-        \<h2>Building intelligent\<br>vision systems.\</h2>
-
-      \</div>
+  </section>
 
 
-      \<div class="about-grid">
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-        \<div class="about-text">
+  <section id="about">
 
-          \<p>
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          About Me
+        </div>
+
+        <h2>
+          Building intelligent<br>
+          vision systems.
+        </h2>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
             My work focuses on developing computer vision systems
             capable of operating reliably in challenging real-world
             environments.
-          \</p>
+          </p>
 
-          \<p>
+          <p>
             My research interests include deep learning,
-            image segmentation, intelligent
-            transportation systems, embedded AI and hardware
-            acceleration.
-          \</p>
+            image segmentation, intelligent transportation systems,
+            embedded AI and hardware acceleration.
+          </p>
 
-          \<p>
+          <p>
             I am particularly interested in taking AI models from
             research environments and deploying them on practical
             embedded and hardware platforms.
-          \</p>
+          </p>
 
-        \</div>
-
-
-        \<div class="info-card">
-
-          \<div class="info-item">
-            \<strong>Research Focus\</strong>
-            \<span>Computer Vision & Deep Learning\</span>
-          \</div>
-
-          \<div class="info-item">
-            \<strong>Specialization\</strong>
-            \<span>Image Segmentation & Embedded AI\</span>
-          \</div>
-
-          \<div class="info-item">
-            \<strong>Hardware\</strong>
-            \<span>Raspberry Pi • FPGA • PYNQ\</span>
-          \</div>
-
-          \<div class="info-item">
-            \<strong>Applications\</strong>
-            \<span>Intelligent Transportation Systems\</span>
-          \</div>
-
-        \</div>
-
-      \</div>
-
-    \</div>
-
-  \</section>
+        </div>
 
 
-  \<!-- RESEARCH -->
+        <div class="info-card">
 
-  \<section id="research">
+          <div class="info-item">
+            <strong>Research Focus</strong>
+            <span>Computer Vision & Deep Learning</span>
+          </div>
 
-    \<div class="container">
+          <div class="info-item">
+            <strong>Specialization</strong>
+            <span>Image Segmentation & Embedded AI</span>
+          </div>
 
-      \<div class="section-title">
+          <div class="info-item">
+            <strong>Hardware</strong>
+            <span>Raspberry Pi • FPGA • PYNQ</span>
+          </div>
 
-        \<div class="section-label">Featured Research\</div>
+          <div class="info-item">
+            <strong>Applications</strong>
+            <span>Intelligent Transportation Systems</span>
+          </div>
 
-        \<h2>Road Scene Segmentation \<br>for Intelligent Transportation Systems\</h2>
+        </div>
 
-      \</div>
+      </div>
+
+    </div>
+
+  </section>
 
 
-      \<div class="research-card">
+  <!-- =========================
+       RESEARCH
+  ========================= -->
 
-        \<h3>
-           Learning-Based for Road Markings
-        \</h3>
+  <section id="research">
 
-        \<p>
-          A computer vision framework for Night road-boundary
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Featured Research
+        </div>
+
+        <h2>
+          Road Scene Segmentation<br>
+          for Intelligent Transportation Systems
+        </h2>
+
+      </div>
+
+
+      <div class="research-card">
+
+        <h3>
+          Learning-Based Road Boundary Segmentation
+        </h3>
+
+        <p>
+          A computer vision framework for night road-boundary
           segmentation designed to address low illumination,
           headlight glare, shadows and sensor noise. The work
           combines image enhancement, deep-learning segmentation
           and embedded deployment.
-        \</p>
+        </p>
 
 
-        \<div class="tags">
+        <div class="tags">
 
-          \<span class="tag">Computer Vision for Intelligent Transportation Systems\</span>
-          \<span class="tag">Image Segmentation\</span>
-          \<span class="tag">CLAHE\</span>
-          \<span class="tag">Gamma Correction\</span>
-          \<span class="tag">Computer Vision\</span>
-          \<span class="tag">ADAS\</span>
-          \<span class="tag">Raspberry Pi 5\</span>
-          \<span class="tag">FPGA / PYNQ\</span>
+          <span class="tag">
+            Computer Vision
+          </span>
 
-        \</div>
-        \<!-- 3D TRANSPORTATION VISUAL -->
+          <span class="tag">
+            Intelligent Transportation Systems
+          </span>
 
-          \<div class="transport-3d">
-          
-            \<div class="transport-horizon">\</div>
-          
-            \<div class="scene-grid">\</div>
-          
-            \<div class="road-3d">
-          
-              \<div class="road-center">\</div>
-          
-              \<div class="boundary-left">\</div>
-              \<div class="boundary-right">\</div>
-          
-            \</div>
-          
-          
-            \<!-- Vehicle -->
-          
-            \<div class="vehicle">\</div>
-          
-          
-            \<!-- AI Detection Box -->
-          
-            \<div class="detection-box">
-              \<span>ROAD DETECTED\</span>
-            \</div>
-          
-          
-            \<!-- AI Information -->
-          
-            \<div class="ai-label label-one">
-              \<strong>ROAD SEGMENTATION\</strong>
-              Pixel-Level Analysis
-            \</div>
-          
-            \<div class="ai-label label-two">
-              \<strong>ADAS\</strong>
-              Intelligent Road Understanding
-            \</div>
-          
-            \<div class="ai-label label-three">
-              \<strong>EDGE AI\</strong>
-              Real-Time Processing
-            \</div>
-          
-            \<div class="ai-label label-four">
-              \<strong>FPGA\</strong>
-              Hardware Acceleration
-            \</div>
-          
-          \</div>
+          <span class="tag">
+            Image Segmentation
+          </span>
+
+          <span class="tag">
+            CLAHE
+          </span>
+
+          <span class="tag">
+            Gamma Correction
+          </span>
+
+          <span class="tag">
+            ADAS
+          </span>
+
+          <span class="tag">
+            Raspberry Pi 5
+          </span>
+
+          <span class="tag">
+            FPGA / PYNQ
+          </span>
+
+        </div>
 
 
-        \<div class="metrics">
-          \<div class="metric">
-            \<strong>Deep Learning\</strong>
-            \<span>Vision-Based Segmentation\</span>
-          \</div>
-          
-          \<div class="metric">
-            \<strong>Real-Time\</strong>
-            \<span>Embedded Vision\</span>
-          \</div>
-          
-          \<div class="metric">
-            \<strong>FPGA\</strong>
-            \<span>Hardware Acceleration\</span>
-          \</div>
-          
-          \<div class="metric">
-            \<strong>ITS\</strong>
-            \<span>Intelligent Transportation\</span>
-          \</div>
-        \</div>
+        <!-- =========================
+             3D TRANSPORTATION VISUAL
+        ========================= -->
 
-      \</div>
+        <div class="transport-3d">
 
-    \</div>
+          <div class="transport-horizon"></div>
 
-  \</section>
+          <div class="scene-grid"></div>
 
-  
+          <div class="road-3d">
+
+            <div class="road-center"></div>
+
+            <div class="boundary-left"></div>
+
+            <div class="boundary-right"></div>
+
+          </div>
 
 
-  \<!-- PROJECTS -->
-
-  \<section id="projects">
-
-    \<div class="container">
-
-      \<div class="section-title">
-
-        \<div class="section-label">Selected Projects\</div>
-        \<!-- INTERACTIVE 3D VISION SYSTEM -->
-
-          \<div class="interactive-3d">
-          
-            \<div class="scene-title">
-              \<strong>INTERACTIVE VISION SYSTEM\</strong>
-              \<span>3D Transportation Concept\</span>
-            \</div>
-          
-            \<div class="scene-status">
-              \<div class="status-dot">\</div>
-              REAL-TIME VISION
-            \</div>
-          
-            \<div id="vision3d">\</div>
-          
-            \<div class="scene-help">
-              ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
-            \</div>
-          
-          \</div>
-        
-
-        \<h2>Research Orientation into\<br>real-world systems.\</h2>
-
-      \</div>
+          <div class="vehicle"></div>
 
 
-      \<div class="projects">
+          <div class="detection-box">
 
-        \<div class="project">
+            <span>
+              ROAD DETECTED
+            </span>
 
-          \<div class="project-number">01 / COMPUTER VISION\</div>
-
-          \<h3> Road Scene Segmentation\</h3>
-
-          \<p>
-            Development and evaluation of a Computer Vision for Intelligent Transportation Systems-based
-            segmentation system for Night road-boundary
-            detection and pixel-level evaluation.
-          \</p>
-
-          \<div class="tags">
-            \<span class="tag">Computer Vision for Intelligent Transportation Systems\</span>
-            \<span class="tag">Python\</span>
-            \<span class="tag">Deep Learning\</span>
-          \</div>
-
-        \</div>
+          </div>
 
 
-        \<div class="project">
+          <div class="ai-label label-one">
 
-          \<div class="project-number">02 / FPGA\</div>
+            <strong>
+              ROAD SEGMENTATION
+            </strong>
 
-          \<h3>Computer Vision for Intelligent Transportation Systems on Field Programmable Gate Array \</h3>
+            Pixel-Level Analysis
 
-          \<p>
-            Exploration of hardware deployment of a Computer Vision for Intelligent Transportation Systems model
-            on a Field Programmable Gate Array (FPGA) platform, including model conversion,
+          </div>
+
+
+          <div class="ai-label label-two">
+
+            <strong>
+              ADAS
+            </strong>
+
+            Intelligent Road Understanding
+
+          </div>
+
+
+          <div class="ai-label label-three">
+
+            <strong>
+              EDGE AI
+            </strong>
+
+            Real-Time Processing
+
+          </div>
+
+
+          <div class="ai-label label-four">
+
+            <strong>
+              FPGA
+            </strong>
+
+            Hardware Acceleration
+
+          </div>
+
+        </div>
+
+
+        <div class="metrics">
+
+          <div class="metric">
+            <strong>Deep Learning</strong>
+            <span>Vision-Based Segmentation</span>
+          </div>
+
+          <div class="metric">
+            <strong>Real-Time</strong>
+            <span>Embedded Vision</span>
+          </div>
+
+          <div class="metric">
+            <strong>FPGA</strong>
+            <span>Hardware Acceleration</span>
+          </div>
+
+          <div class="metric">
+            <strong>ITS</strong>
+            <span>Intelligent Transportation</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Selected Projects
+        </div>
+
+
+        <!-- =========================
+             INTERACTIVE 3D VISION
+        ========================= -->
+
+        <div class="interactive-3d">
+
+          <div class="scene-title">
+
+            <strong>
+              INTERACTIVE VISION SYSTEM
+            </strong>
+
+            <span>
+              3D Transportation Concept
+            </span>
+
+          </div>
+
+
+          <div class="scene-status">
+
+            <div class="status-dot"></div>
+
+            REAL-TIME VISION
+
+          </div>
+
+
+          <div id="vision3d"></div>
+
+
+          <div class="scene-help">
+            ↔ Drag to rotate &nbsp; • &nbsp;
+            Scroll / pinch to zoom
+          </div>
+
+        </div>
+
+
+        <h2>
+          Research Orientation into<br>
+          real-world systems.
+        </h2>
+
+      </div>
+
+
+      <div class="projects">
+
+        <div class="project">
+
+          <div class="project-number">
+            01 / COMPUTER VISION
+          </div>
+
+          <h3>
+            Road Scene Segmentation
+          </h3>
+
+          <p>
+            Development and evaluation of a computer vision-based
+            segmentation system for night road-boundary detection
+            and pixel-level evaluation.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">
+              Computer Vision
+            </span>
+
+            <span class="tag">
+              Python
+            </span>
+
+            <span class="tag">
+              Deep Learning
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">
+            02 / FPGA
+          </div>
+
+          <h3>
+            Computer Vision on FPGA
+          </h3>
+
+          <p>
+            Exploration of hardware deployment of a computer vision
+            model on an FPGA platform, including model conversion,
             inference and comparison with CPU execution.
-          \</p>
+          </p>
 
-          \<div class="tags">
-            \<span class="tag">FPGA\</span>
-            \<span class="tag">PYNQ\</span>
-            \<span class="tag">ONNX - Model Format\</span>
-          \</div>
+          <div class="tags">
 
-        \</div>
+            <span class="tag">
+              FPGA
+            </span>
+
+            <span class="tag">
+              PYNQ
+            </span>
+
+            <span class="tag">
+              ONNX
+            </span>
+
+          </div>
+
+        </div>
 
 
-        \<div class="project">
+        <div class="project">
 
-          \<div class="project-number">03 / EMBEDDED AI\</div>
+          <div class="project-number">
+            03 / EMBEDDED AI
+          </div>
 
-          \<h3>Raspberry Pi 5 Deployment\</h3>
+          <h3>
+            Raspberry Pi 5 Deployment
+          </h3>
 
-          \<p>
-            Embedded implementation of Night road-boundary
+          <p>
+            Embedded implementation of night road-boundary
             segmentation using a Raspberry Pi 5 and camera-based
             real-time processing pipeline.
-          \</p>
+          </p>
 
-          \<div class="tags">
-            \<span class="tag">Raspberry Pi 5\</span>
-            \<span class="tag">Embedded AI\</span>
-            \<span class="tag">Real-Time Vision\</span>
-          \</div>
+          <div class="tags">
 
-        \</div>
+            <span class="tag">
+              Raspberry Pi 5
+            </span>
+
+            <span class="tag">
+              Embedded AI
+            </span>
+
+            <span class="tag">
+              Real-Time Vision
+            </span>
+
+          </div>
+
+        </div>
 
 
-        \<div class="project">
+        <div class="project">
 
-          \<div class="project-number">04 / IMAGE PROCESSING\</div>
+          <div class="project-number">
+            04 / IMAGE PROCESSING
+          </div>
 
-          \<h3> Image Enhancement\</h3>
+          <h3>
+            Image Enhancement
+          </h3>
 
-          \<p>
+          <p>
             Multi-stage image enhancement pipeline using bilateral
             filtering, gamma correction, CLAHE, HSV processing,
             morphological operations and connected components.
-          \</p>
+          </p>
 
-          \<div class="tags">
-            \<span class="tag">CLAHE\</span>
-            \<span class="tag">OpenCV\</span>
-            \<span class="tag">Image Processing\</span>
-          \</div>
+          <div class="tags">
 
-        \</div>
+            <span class="tag">
+              CLAHE
+            </span>
 
-      \</div>
+            <span class="tag">
+              OpenCV
+            </span>
 
-    \</div>
+            <span class="tag">
+              Image Processing
+            </span>
 
-  \</section>
+          </div>
 
+        </div>
 
-  \<!-- SKILLS -->
+      </div>
 
-  \<section id="skills">
+    </div>
 
-    \<div class="container">
-
-      \<div class="section-title">
-
-        \<div class="section-label">Technical Skills\</div>
-
-        \<h2>Tools I work with.\</h2>
-
-      \</div>
+  </section>
 
 
-      \<div class="skills">
+  <!-- =========================
+       SKILLS
+  ========================= -->
 
-        \<span class="skill">Python\</span>
-        \<span class="skill">HTML/CSS/JavaScript\</span>
-        \<span class="skill">ReactJS\</span>
-        \<span class="skill">Node.js\</span>
-        \<span class="skill">Odoo - ERP (Enterprise Resource Planning) system\</span>
-        \<span class="skill">Computer Vision for Intelligent Transportation Systems\</span>
-        \<span class="skill">Computer Vision\</span>
-        \<span class="skill">OpenCV\</span>
-        \<span class="skill">Deep Learning\</span>
-        \<span class="skill">Image Segmentation\</span>
-        \<span class="skill">Field Programmable Gate Array (FPGA)\</span>
-        \<span class="skill">PYNQ\</span>
-        \<span class="skill">Raspberry Pi\</span>
-        \<span class="skill">Embedded AI\</span>
-        \<span class="skill">MATLAB\</span>
-        \<span class="skill">Git / GitHub\</span>
+  <section id="skills">
 
-      \</div>
+    <div class="container">
 
-    \</div>
+      <div class="section-title">
 
-  \</section>
+        <div class="section-label">
+          Technical Skills
+        </div>
 
-  \<section id="experience">
-  
-    \<div class="container">
-  
-      \<div class="section-title">
-  
-        \<div class="section-label">Experience\</div>
-  
-        \<h2>Professional journey.\</h2>
-  
-      \</div>
-  
-  
-      \<div class="timeline">
-  
-        \<div class="timeline-item">
-  
-          \<div class="year">AUG 2024 — PRESENT\</div>
-  
-          \<h3>Research Assistant / MS Research Scholar\</h3>
-  
-          \<p>\<strong>Indian Institute of Technology, Palakkad\</strong>\</p>
-  
-          \<p>
+        <h2>
+          Tools I work with.
+        </h2>
+
+      </div>
+
+
+      <div class="skills">
+
+        <span class="skill">Python</span>
+        <span class="skill">HTML/CSS/JavaScript</span>
+        <span class="skill">ReactJS</span>
+        <span class="skill">Node.js</span>
+        <span class="skill">Odoo ERP</span>
+        <span class="skill">Computer Vision</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">Deep Learning</span>
+        <span class="skill">Image Segmentation</span>
+        <span class="skill">FPGA</span>
+        <span class="skill">PYNQ</span>
+        <span class="skill">Raspberry Pi</span>
+        <span class="skill">Embedded AI</span>
+        <span class="skill">MATLAB</span>
+        <span class="skill">Git / GitHub</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EXPERIENCE
+  ========================= -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Experience
+        </div>
+
+        <h2>
+          Professional journey.
+        </h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="year">
+            AUG 2024 — PRESENT
+          </div>
+
+          <h3>
+            Research Assistant / MS Research Scholar
+          </h3>
+
+          <p>
+            <strong>
+              Indian Institute of Technology, Palakkad
+            </strong>
+          </p>
+
+          <p>
             Conducting research in computer vision and intelligent
             transportation systems, with a focus on road scene
             segmentation, image processing, deep learning, and
             resource-efficient deployment.
-          \</p>
-  
-          \<div class="tags">
-            \<span class="tag">Computer Vision\</span>
-            \<span class="tag">Deep Learning\</span>
-            \<span class="tag">Image Processing\</span>
-            \<span class="tag">FPGA\</span>
-            \<span class="tag">Embedded AI\</span>
-          \</div>
-  
-        \</div>
-  
-  
-        \<div class="timeline-item">
-  
-          \<div class="year">JUN 2023 — JUL 2024\</div>
-  
-          \<h3>Junior Research Fellow (JRF)\</h3>
-  
-          \<p>\<strong>Indian Institute of Technology, Palakkad\</strong>\</p>
-  
-          \<p>
-            Worked on biomedical signal processing and mobile health-monitoring
-            applications, developing Android-based solutions for real-time
-            physiological monitoring and human activity recognition.
-          \</p>
-          
-          \<p>
-            \<strong>Human Activity-Aware Heart Rate Monitoring:\</strong>
-            Developed an Android application integrating GPS and accelerometer
-            data with a Photoplethysmography (PPG) sensor board for activity-aware, real-time heart-rate
-            monitoring. Patent documented.
-          \</p>
-          
-          \<p>
-            \<strong>Real-Time Bluetooth ECG/PPG Monitoring:\</strong>
-            Developed an Android application for wireless acquisition and
-            dynamic visualization of Electrocardiogram (ECG) and Photoplethysmography (PPG) biomedical signals.
-          \</p>
-  
-          \<div class="tags">
-            \<span class="tag">Android\</span>
-            \<span class="tag">Python\</span>
-            \<span class="tag">Electrocardiogram (ECG) / Photoplethysmography (PPG)\</span>
-            \<span class="tag">IoT\</span>
-            \<span class="tag">Signal Processing\</span>
-          \</div>
-  
-        \</div>
-        
-  
-  
-        \<div class="timeline-item">
-  
-          \<div class="year">DEC 2023 — JUN 2024\</div>
-  
-          \<h3>Odoo Developer\</h3>
-  
-          \<p>\<strong>Loyal IT Solutions, Infopark Koratty, Thrissur\</strong>\</p>
-  
-          \<p>
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">Image Processing</span>
+            <span class="tag">FPGA</span>
+            <span class="tag">Embedded AI</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            JUN 2023 — JUL 2024
+          </div>
+
+          <h3>
+            Junior Research Fellow (JRF)
+          </h3>
+
+          <p>
+            <strong>
+              Indian Institute of Technology, Palakkad
+            </strong>
+          </p>
+
+          <p>
+            Worked on biomedical signal processing and mobile
+            health-monitoring applications, developing Android-based
+            solutions for real-time physiological monitoring and
+            human activity recognition.
+          </p>
+
+          <p>
+            <strong>
+              Human Activity-Aware Heart Rate Monitoring:
+            </strong>
+            Developed an Android application integrating GPS and
+            accelerometer data with a PPG sensor board for
+            activity-aware, real-time heart-rate monitoring.
+            Patent documented.
+          </p>
+
+          <p>
+            <strong>
+              Real-Time Bluetooth ECG/PPG Monitoring:
+            </strong>
+            Developed an Android application for wireless acquisition
+            and dynamic visualization of ECG and PPG biomedical signals.
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Android</span>
+            <span class="tag">Python</span>
+            <span class="tag">ECG / PPG</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Signal Processing</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            DEC 2023 — JUN 2024
+          </div>
+
+          <h3>
+            Odoo Developer
+          </h3>
+
+          <p>
+            <strong>
+              Loyal IT Solutions, Infopark Koratty, Thrissur
+            </strong>
+          </p>
+
+          <p>
             Developed and customized Odoo ERP modules covering CRM,
             sales, project management and accounting. Improved
             business workflows through front-end and back-end
             customization and automation.
-          \</p>
-  
-          \<div class="tags">
-            \<span class="tag">Python\</span>
-            \<span class="tag">Odoo ERP\</span>
-            \<span class="tag">CRM\</span>
-            \<span class="tag">ERP\</span>
-            \<span class="tag">Workflow Automation\</span>
-          \</div>
-  
-        \</div>
-  
-  
-        \<div class="timeline-item">
-  
-          \<div class="year">2022 — 6 MONTHS\</div>
-  
-          \<h3>Odoo Developer Trainee\</h3>
-  
-          \<p>\<strong>Cybrosys Technologies Pvt. Ltd., Calicut\</strong>\</p>
-  
-          \<p>
+          </p>
+
+          <div class="tags">
+
+            <span class="tag">Python</span>
+            <span class="tag">Odoo ERP</span>
+            <span class="tag">CRM</span>
+            <span class="tag">ERP</span>
+            <span class="tag">Workflow Automation</span>
+
+          </div>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">
+            2022 — 6 MONTHS
+          </div>
+
+          <h3>
+            Odoo Developer Trainee
+          </h3>
+
+          <p>
+            <strong>
+              Cybrosys Technologies Pvt. Ltd., Calicut
+            </strong>
+          </p>
+
+          <p>
             Developed and customized business management
             applications, debugging existing ERP systems,
             implementing new features and supporting client-specific
             requirements.
-          \</p>
-  
-          \<div class="tags">
-            \<span class="tag">Python\</span>
-            \<span class="tag">Odoo\</span>
-            \<span class="tag">ERP Development\</span>
-            \<span class="tag">Debugging\</span>
-          \</div>
-  
-        \</div>
-  
-      \</div>
-  
-    \</div>
-  
-  \</section>
+          </p>
 
-  \<!-- INTERACTIVE 3D BIOMEDICAL MONITORING -->
+          <div class="tags">
 
-  \<section id="biomedical-3d">
-  
-    \<div class="container">
-  
-      \<div class="section-title">
-        \<div class="section-label">Biomedical Monitoring\</div>
-        \<h2>Interactive ECG & PPG\<br>Monitoring System.\</h2>
-      \</div>
-  
-      \<div class="medical-3d">
-  
-        \<div class="medical-label medical-label-one">
-          \<strong>ECG\</strong>
+            <span class="tag">Python</span>
+            <span class="tag">Odoo</span>
+            <span class="tag">ERP Development</span>
+            <span class="tag">Debugging</span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       BIOMEDICAL 3D PHONE SECTION
+  ===================================================== -->
+
+  <section id="biomedical-3d">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Biomedical Monitoring
+        </div>
+
+        <h2>
+          Interactive ECG & PPG<br>
+          Monitoring System.
+        </h2>
+
+      </div>
+
+
+      <div class="medical-3d">
+
+        <div class="medical-label medical-label-one">
+
+          <strong>
+            ECG
+          </strong>
+
           Real-Time Cardiac Signal
-        \</div>
-  
-        \<div class="medical-label medical-label-two">
-          \<strong>PPG\</strong>
+
+        </div>
+
+
+        <div class="medical-label medical-label-two">
+
+          <strong>
+            PPG
+          </strong>
+
           Pulse Waveform
-        \</div>
-  
-        \<div class="medical-label medical-label-three">
-          \<strong>BLUETOOTH\</strong>
+
+        </div>
+
+
+        <div class="medical-label medical-label-three">
+
+          <strong>
+            BLUETOOTH
+          </strong>
+
           Wireless Sensor Data
-        \</div>
-  
-        \<div class="medical-label medical-label-four">
-          \<strong>ANDROID\</strong>
+
+        </div>
+
+
+        <div class="medical-label medical-label-four">
+
+          <strong>
+            ANDROID
+          </strong>
+
           Mobile Health Monitoring
-        \</div>
-  
-        \<div id="medical3d">\</div>
-  
-        \<div class="medical-help">
-          ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
-        \</div>
-  
-      \</div>
-  
-    \</div>
-  
-  \</section>
+
+        </div>
 
 
-  \<!-- EDUCATION -->
+        <!-- THIS IS WHERE THE 3D PHONE IS RENDERED -->
 
-  \<section id="education">
-
-    \<div class="container">
-
-      \<div class="section-title">
-
-        \<div class="section-label">Education\</div>
-
-        \<h2>Academic journey.\</h2>
-
-      \</div>
+        <div id="medical3d"></div>
 
 
-      \<div class="timeline">
+        <div class="medical-help">
+          ↔ Drag to rotate &nbsp; • &nbsp;
+          Scroll / pinch to zoom
+        </div>
 
-        \<div class="timeline-item">
+      </div>
 
-          \<div class="year">M.S. by RESEARCH\</div>
+    </div>
 
-          \<h3>M.S. in Electrical Engineering\</h3>
-          \<p>Indian Institute Of Technology–Palakkad (IIT–Palakkad)\</p>
+  </section>
 
-          \<p>
+
+  <!-- =========================
+       EDUCATION
+  ========================= -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">
+          Education
+        </div>
+
+        <h2>
+          Academic journey.
+        </h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="year">
+            M.S. BY RESEARCH
+          </div>
+
+          <h3>
+            M.S. in Electrical Engineering
+          </h3>
+
+          <p>
+            Indian Institute of Technology–Palakkad
+          </p>
+
+          <p>
             Research in computer vision, machine learning and
             Embedded AI for intelligent transportation systems.
-          \</p>
+          </p>
 
-        \</div>
-
-
-        \<div class="timeline-item">
-
-          \<div class="year">UNDERGRADUATE\</div>
-
-          \<h3>B.Tech - Computer Science Engineering\</h3>
-          \<p>APJ Abdul Kalam Technological University\</p>
-          \<p>University in Thiruvananthapuram, Kerala\</p>
-
-          \<p>
-            Engineering background with a strong foundation in electrical engineering and emerging technologies.
-          \</p>
-
-        \</div>
-
-      \</div>
-
-    \</div>
-
-  \</section>
+        </div>
 
 
-  \<!-- CONTACT -->
+        <div class="timeline-item">
 
-  \<section id="contact">
+          <div class="year">
+            UNDERGRADUATE
+          </div>
 
-  \<div class="container">
+          <h3>
+            B.Tech - Computer Science Engineering
+          </h3>
 
-    \<div class="contact">
+          <p>
+            APJ Abdul Kalam Technological University
+          </p>
 
-      \<div class="section-label">Contact\</div>
+          <p>
+            University in Thiruvananthapuram, Kerala
+          </p>
 
-      \<h2>Let's connect.\</h2>
+          <p>
+            Engineering background with a strong foundation in
+            computer science and emerging technologies.
+          </p>
 
-      \<p>
-        Interested in computer vision, embedded AI,
-        deep learning, FPGA acceleration or research
-        collaborations? Feel free to connect.
-      \</p>
+        </div>
 
-      \<div class="contact-info">
+      </div>
 
-        \<p>
-          📞 \<strong>Phone:\</strong>
-          \<a href="tel:+919645291533">+91 96452 91533\</a>
-        \</p>
+    </div>
 
-        \<p>
-          ✉️ \<strong>Email:\</strong>
-          \<a href="mailto\:yusranpmoidutty\@gmail.com">
-            yusranpmoidutty\@gmail.com
-          \</a>
-        \</p>
-
-        \<p>
-          🔗 \<strong>LinkedIn:\</strong>
-          \<a href="[https://www.linkedin.com/in/yusra-moidutty-a90688203/](https://www.linkedin.com/in/yusra-moidutty-a90688203/)"
-             target="\_blank">
-            LinkedIn Profile
-          \</a>
-        \</p>
-
-        \<p>
-          🎓 \<strong>IIT Palakkad:\</strong>
-          \<a href="[https://iitpkd.ac.in/people/122413010](https://iitpkd.ac.in/people/122413010)"
-             target="\_blank">
-            IIT Palakkad Profile
-          \</a>
-        \</p>
-
-        \</div>
-
-      \</div>
-
-    \</div>
-
-  \</section>  
+  </section>
 
 
-  \<!-- FOOTER -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
 
-  \<footer>
+  <section id="contact">
 
-    \<div class="container">
+    <div class="container">
+
+      <div class="contact">
+
+        <div class="section-label">
+          Contact
+        </div>
+
+        <h2>
+          Let's connect.
+        </h2>
+
+        <p>
+          Interested in computer vision, embedded AI,
+          deep learning, FPGA acceleration or research
+          collaborations? Feel free to connect.
+        </p>
+
+
+        <div class="contact-info">
+
+          <p>
+            📞
+            <strong>Phone:</strong>
+            <a href="tel:+919645291533">
+              +91 96452 91533
+            </a>
+          </p>
+
+
+          <p>
+            ✉️
+            <strong>Email:</strong>
+            <a href="mailto:yusranpmoidutty@gmail.com">
+              yusranpmoidutty@gmail.com
+            </a>
+          </p>
+
+
+          <p>
+            🔗
+            <strong>LinkedIn:</strong>
+            <a
+              href="https://www.linkedin.com/in/yusra-moidutty-a90688203/"
+              target="_blank"
+              rel="noopener noreferrer">
+              LinkedIn Profile
+            </a>
+          </p>
+
+
+          <p>
+            🎓
+            <strong>IIT Palakkad:</strong>
+            <a
+              href="https://iitpkd.ac.in/people/122413010"
+              target="_blank"
+              rel="noopener noreferrer">
+              IIT Palakkad Profile
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container">
 
       © 2026 Yusra Moidutty. All rights reserved.
 
-    \</div>
+    </div>
 
-  \</footer>
+  </footer>
 
-        \<script type="module">
 
-import \* as THREE from "three";
+  <!-- =====================================================
+       THREE.JS
+  ===================================================== -->
 
-import { OrbitControls }
-from "three/addons/controls/OrbitControls.js";
+  <script type="module">
 
+    import * as THREE from "three";
 
-/\* =========================
-   BASIC SETUP
-   \========================= \*/
+    import {
+      OrbitControls
+    } from "three/addons/controls/OrbitControls.js";
 
-const container = document.getElementById("vision3d");
 
-const scene = new THREE.Scene();
+    /* =====================================================
+       1. TRANSPORTATION 3D SCENE
+    ===================================================== */
 
-scene.background = new THREE.Color(0x08090d);
+    const visionContainer =
+      document.getElementById("vision3d");
 
+    if (visionContainer) {
 
-/\* =========================
-   CAMERA
-   \========================= \*/
+      const scene =
+        new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(
-  45,
-  container.clientWidth / container.clientHeight,
-  0.1,
-  1000
-);
+      scene.background =
+        new THREE.Color(0x08090d);
 
-camera.position.set(7, 5, 9);
 
+      /* CAMERA */
 
-/\* =========================
-   RENDERER
-   \========================= \*/
+      const camera =
+        new THREE.PerspectiveCamera(
+          45,
+          visionContainer.clientWidth /
+          visionContainer.clientHeight,
+          0.1,
+          1000
+        );
 
-const renderer = new THREE.WebGLRenderer({
-  antialias: true,
-  alpha: true
-});
+      camera.position.set(
+        7,
+        5,
+        9
+      );
 
-renderer.setPixelRatio(
-  Math.min(window\.devicePixelRatio, 2)
-);
 
-renderer.setSize(
-  container.clientWidth,
-  container.clientHeight
-);
+      /* RENDERER */
 
-renderer.shadowMap.enabled = true;
+      const renderer =
+        new THREE.WebGLRenderer({
+          antialias: true,
+          alpha: true
+        });
 
-renderer.shadowMap.type =
-  THREE.PCFSoftShadowMap;
+      renderer.setPixelRatio(
+        Math.min(window.devicePixelRatio, 2)
+      );
 
-container.appendChild(renderer.domElement);
+      renderer.setSize(
+        visionContainer.clientWidth,
+        visionContainer.clientHeight
+      );
 
+      renderer.shadowMap.enabled = true;
 
-/\* =========================
-   CONTROLS
-   \========================= \*/
+      renderer.shadowMap.type =
+        THREE.PCFSoftShadowMap;
 
-const controls = new OrbitControls(
-  camera,
-  renderer.domElement
-);
+      visionContainer.appendChild(
+        renderer.domElement
+      );
 
-controls.enableDamping = true;
 
-controls.dampingFactor = 0.06;
+      /* CONTROLS */
 
-controls.enablePan = false;
+      const controls =
+        new OrbitControls(
+          camera,
+          renderer.domElement
+        );
 
-controls.minDistance = 5;
+      controls.enableDamping = true;
 
-controls.maxDistance = 15;
+      controls.dampingFactor = 0.06;
 
-controls.maxPolarAngle =
-  Math.PI / 2.05;
+      controls.enablePan = false;
 
+      controls.minDistance = 5;
 
-/\* =========================
-   LIGHTING
-   \========================= \*/
+      controls.maxDistance = 15;
 
-const ambientLight =
-  new THREE.AmbientLight(
-    0xffffff,
-    1.2
-  );
+      controls.maxPolarAngle =
+        Math.PI / 2.05;
 
-scene.add(ambientLight);
 
+      /* LIGHTING */
 
-const mainLight =
-  new THREE.DirectionalLight(
-    0xffffff,
-    2.2
-  );
+      scene.add(
+        new THREE.AmbientLight(
+          0xffffff,
+          1.2
+        )
+      );
 
-mainLight.position.set(
-  5,
-  10,
-  5
-);
 
-mainLight.castShadow = true;
+      const mainLight =
+        new THREE.DirectionalLight(
+          0xffffff,
+          2.2
+        );
 
-scene.add(mainLight);
+      mainLight.position.set(
+        5,
+        10,
+        5
+      );
 
+      mainLight.castShadow = true;
 
-const purpleLight =
-  new THREE.PointLight(
-    0x8b7cff,
-    30,
-    20
-  );
+      scene.add(mainLight);
 
-purpleLight.position.set(
-  -5,
-  4,
-  -3
-);
 
-scene.add(purpleLight);
+      const purpleLight =
+        new THREE.PointLight(
+          0x8b7cff,
+          30,
+          20
+        );
 
+      purpleLight.position.set(
+        -5,
+        4,
+        -3
+      );
 
-const cyanLight =
-  new THREE.PointLight(
-    0x5ee7df,
-    25,
-    20
-  );
+      scene.add(purpleLight);
 
-cyanLight.position.set(
-  5,
-  3,
-  3
-);
 
-scene.add(cyanLight);
+      const cyanLight =
+        new THREE.PointLight(
+          0x5ee7df,
+          25,
+          20
+        );
 
+      cyanLight.position.set(
+        5,
+        3,
+        3
+      );
 
-/\* =========================
-   ROAD
-   \========================= \*/
+      scene.add(cyanLight);
 
-const roadMaterial =
-  new THREE.MeshStandardMaterial({
-    color: 0x181b23,
-    roughness: 0.85,
-    metalness: 0.1
-  });
 
+      /* ROAD */
 
-const roadGeometry =
-  new THREE.BoxGeometry(
-    9,
-    0.25,
-    16
-  );
+      const road =
+        new THREE.Mesh(
 
+          new THREE.BoxGeometry(
+            9,
+            0.25,
+            16
+          ),
 
-const road =
-  new THREE.Mesh(
-    roadGeometry,
-    roadMaterial
-  );
+          new THREE.MeshStandardMaterial({
+            color: 0x181b23,
+            roughness: 0.85,
+            metalness: 0.1
+          })
 
-road.position.y = -0.2;
+        );
 
-road.receiveShadow = true;
+      road.position.y = -0.2;
 
-scene.add(road);
+      road.receiveShadow = true;
 
+      scene.add(road);
 
-/\* =========================
-   ROAD SIDE LINES
-   \========================= \*/
 
-function createRoadLine(x) {
+      /* ROAD SIDE LINES */
 
-  const geometry =
-    new THREE.BoxGeometry(
-      0.06,
-      0.04,
-      16
-    );
+      function createRoadLine(x) {
 
-  const material =
-    new THREE.MeshBasicMaterial({
-      color: 0x5ee7df
-    });
+        const line =
+          new THREE.Mesh(
 
-  const line =
-    new THREE.Mesh(
-      geometry,
-      material
-    );
+            new THREE.BoxGeometry(
+              0.06,
+              0.04,
+              16
+            ),
 
-  line.position.set(
-    x,
-    -0.04,
-    0
-  );
+            new THREE.MeshBasicMaterial({
+              color: 0x5ee7df
+            })
 
-  scene.add(line);
+          );
 
-  return line;
-}
+        line.position.set(
+          x,
+          -0.04,
+          0
+        );
 
+        scene.add(line);
+      }
 
-createRoadLine(-4.2);
+      createRoadLine(-4.2);
 
-createRoadLine(4.2);
+      createRoadLine(4.2);
 
 
-/\* =========================
-   ROAD CENTER MARKINGS
-   \========================= \*/
+      /* CENTER MARKINGS */
 
-const centerMaterial =
-  new THREE.MeshBasicMaterial({
-    color: 0xffffff
-  });
+      const centerMaterial =
+        new THREE.MeshBasicMaterial({
+          color: 0xffffff
+        });
 
 
-for (let z = -7; z < 8; z += 2) {
+      for (
+        let z = -7;
+        z < 8;
+        z += 2
+      ) {
 
-  const geometry =
-    new THREE.BoxGeometry(
-      0.08,
-      0.05,
-      1
-    );
+        const marker =
+          new THREE.Mesh(
+            new THREE.BoxGeometry(
+              0.08,
+              0.05,
+              1
+            ),
+            centerMaterial
+          );
 
-  const marker =
-    new THREE.Mesh(
-      geometry,
-      centerMaterial
-    );
+        marker.position.set(
+          0,
+          -0.03,
+          z
+        );
 
-  marker.position.set(
-    0,
-    -0.03,
-    z
-  );
+        scene.add(marker);
 
-  scene.add(marker);
-}
+      }
 
 
-/\* =========================
-   VEHICLE
-   \========================= \*/
+      /* VEHICLE */
 
-const vehicle =
-  new THREE.Group();
+      const vehicle =
+        new THREE.Group();
 
-scene.add(vehicle);
+      scene.add(vehicle);
 
 
-/\* Main body \*/
+      /* BODY */
 
-const bodyGeometry =
-  new THREE.BoxGeometry(
-    2.3,
-    0.65,
-    4
-  );
+      const body =
+        new THREE.Mesh(
 
-const bodyMaterial =
-  new THREE.MeshStandardMaterial({
-    color: 0x777b88,
-    roughness: 0.35,
-    metalness: 0.5
-  });
+          new THREE.BoxGeometry(
+            2.3,
+            0.65,
+            4
+          ),
 
-const body =
-  new THREE.Mesh(
-    bodyGeometry,
-    bodyMaterial
-  );
+          new THREE.MeshStandardMaterial({
+            color: 0x777b88,
+            roughness: 0.35,
+            metalness: 0.5
+          })
 
-body.position.y = 0.45;
+        );
 
-body.castShadow = true;
+      body.position.y = 0.45;
 
-vehicle.add(body);
+      body.castShadow = true;
 
+      vehicle.add(body);
 
-/\* Roof \*/
 
-const roofGeometry =
-  new THREE.BoxGeometry(
-    1.65,
-    0.5,
-    1.9
-  );
+      /* ROOF */
 
-const roofMaterial =
-  new THREE.MeshStandardMaterial({
-    color: 0x292d38,
-    roughness: 0.2,
-    metalness: 0.6
-  });
+      const roof =
+        new THREE.Mesh(
 
-const roof =
-  new THREE.Mesh(
-    roofGeometry,
-    roofMaterial
-  );
+          new THREE.BoxGeometry(
+            1.65,
+            0.5,
+            1.9
+          ),
 
-roof.position.set(
-  0,
-  0.95,
-  0.15
-);
+          new THREE.MeshStandardMaterial({
+            color: 0x292d38,
+            roughness: 0.2,
+            metalness: 0.6
+          })
 
-roof.castShadow = true;
+        );
 
-vehicle.add(roof);
+      roof.position.set(
+        0,
+        0.95,
+        0.15
+      );
 
+      roof.castShadow = true;
 
-/\* Windows \*/
+      vehicle.add(roof);
 
-const windowMaterial =
-  new THREE.MeshStandardMaterial({
-    color: 0x101722,
-    metalness: 0.6,
-    roughness: 0.15
-  });
 
+      /* WINDOWS */
 
-const frontWindow =
-  new THREE.Mesh(
-    new THREE.BoxGeometry(
-      1.45,
-      0.35,
-      0.05
-    ),
-    windowMaterial
-  );
+      const windowMaterial =
+        new THREE.MeshStandardMaterial({
+          color: 0x101722,
+          metalness: 0.6,
+          roughness: 0.15
+        });
 
-frontWindow\.position.set(
-  0,
-  1.02,
-  -0.82
-);
 
-vehicle.add(frontWindow);
+      const frontWindow =
+        new THREE.Mesh(
+          new THREE.BoxGeometry(
+            1.45,
+            0.35,
+            0.05
+          ),
+          windowMaterial
+        );
 
+      frontWindow.position.set(
+        0,
+        1.02,
+        -0.82
+      );
 
-const rearWindow =
-  new THREE.Mesh(
-    new THREE.BoxGeometry(
-      1.45,
-      0.35,
-      0.05
-    ),
-    windowMaterial
-  );
+      vehicle.add(frontWindow);
 
-rearWindow\.position.set(
-  0,
-  1.02,
-  1.12
-);
 
-vehicle.add(rearWindow);
+      const rearWindow =
+        new THREE.Mesh(
+          new THREE.BoxGeometry(
+            1.45,
+            0.35,
+            0.05
+          ),
+          windowMaterial
+        );
 
+      rearWindow.position.set(
+        0,
+        1.02,
+        1.12
+      );
 
-/\* =========================
-   WHEELS
-   \========================= \*/
+      vehicle.add(rearWindow);
 
-function createWheel(x, z) {
 
-  const geometry =
-    new THREE.CylinderGeometry(
-      0.42,
-      0.42,
-      0.28,
-      32
-    );
+      /* WHEELS */
 
-  const material =
-    new THREE.MeshStandardMaterial({
-      color: 0x111216,
-      roughness: 0.8
-    });
+      function createWheel(x, z) {
 
-  const wheel =
-    new THREE.Mesh(
-      geometry,
-      material
-    );
+        const wheel =
+          new THREE.Mesh(
 
-  wheel.rotation.z =
-    Math.PI / 2;
+            new THREE.CylinderGeometry(
+              0.42,
+              0.42,
+              0.28,
+              32
+            ),
 
-  wheel.position.set(
-    x,
-    0.3,
-    z
-  );
+            new THREE.MeshStandardMaterial({
+              color: 0x111216,
+              roughness: 0.8
+            })
 
-  wheel.castShadow = true;
+          );
 
-  vehicle.add(wheel);
-}
+        wheel.rotation.z =
+          Math.PI / 2;
 
+        wheel.position.set(
+          x,
+          0.3,
+          z
+        );
 
-createWheel(-1.25, -1.25);
-createWheel(1.25, -1.25);
+        wheel.castShadow = true;
 
-createWheel(-1.25, 1.25);
-createWheel(1.25, 1.25);
+        vehicle.add(wheel);
 
+      }
 
-/\* =========================
-   HEADLIGHTS
-   \========================= \*/
+      createWheel(-1.25, -1.25);
+      createWheel(1.25, -1.25);
+      createWheel(-1.25, 1.25);
+      createWheel(1.25, 1.25);
 
-const headlightMaterial =
-  new THREE.MeshBasicMaterial({
-    color: 0xffffff
-  });
 
+      /* HEADLIGHTS */
 
-function createHeadlight(x) {
+      function createHeadlight(x) {
 
-  const light =
-    new THREE.Mesh(
-      new THREE.BoxGeometry(
+        const light =
+          new THREE.Mesh(
+
+            new THREE.BoxGeometry(
+              0.35,
+              0.15,
+              0.08
+            ),
+
+            new THREE.MeshBasicMaterial({
+              color: 0xffffff
+            })
+
+          );
+
+        light.position.set(
+          x,
+          0.55,
+          -2.03
+        );
+
+        vehicle.add(light);
+
+      }
+
+      createHeadlight(-0.7);
+
+      createHeadlight(0.7);
+
+
+      /* CAMERA SENSOR */
+
+      const sensor =
+        new THREE.Group();
+
+      sensor.position.set(
+        0,
+        1.65,
+        -0.15
+      );
+
+      vehicle.add(sensor);
+
+
+      const sensorBody =
+        new THREE.Mesh(
+
+          new THREE.BoxGeometry(
+            0.45,
+            0.28,
+            0.35
+          ),
+
+          new THREE.MeshStandardMaterial({
+            color: 0x151820,
+            metalness: 0.7,
+            roughness: 0.25
+          })
+
+        );
+
+      sensor.add(sensorBody);
+
+
+      const lens =
+        new THREE.Mesh(
+
+          new THREE.SphereGeometry(
+            0.1,
+            24,
+            24
+          ),
+
+          new THREE.MeshBasicMaterial({
+            color: 0x5ee7df
+          })
+
+        );
+
+      lens.position.z = -0.2;
+
+      sensor.add(lens);
+
+
+      /* VISION BEAM */
+
+      const beam =
+        new THREE.Mesh(
+
+          new THREE.ConeGeometry(
+            3.8,
+            7,
+            4,
+            1,
+            true
+          ),
+
+          new THREE.MeshBasicMaterial({
+            color: 0x5ee7df,
+            transparent: true,
+            opacity: 0.13,
+            side: THREE.DoubleSide
+          })
+
+        );
+
+      beam.rotation.x =
+        -Math.PI / 2;
+
+      beam.position.set(
+        0,
+        1,
+        -4
+      );
+
+      vehicle.add(beam);
+
+
+      /* FLOATING DATA POINTS */
+
+      for (
+        let i = 0;
+        i < 20;
+        i++
+      ) {
+
+        const point =
+          new THREE.Mesh(
+
+            new THREE.SphereGeometry(
+              0.035,
+              8,
+              8
+            ),
+
+            new THREE.MeshBasicMaterial({
+              color: 0x8b7cff
+            })
+
+          );
+
+        point.position.set(
+
+          (Math.random() - 0.5) * 8,
+
+          Math.random() * 2,
+
+          (Math.random() - 0.5) * 12
+
+        );
+
+        scene.add(point);
+
+      }
+
+
+      vehicle.position.set(
+        0,
+        0,
+        1
+      );
+
+
+      /* RESIZE */
+
+      function resizeVision() {
+
+        const width =
+          visionContainer.clientWidth;
+
+        const height =
+          visionContainer.clientHeight;
+
+        camera.aspect =
+          width / height;
+
+        camera.updateProjectionMatrix();
+
+        renderer.setSize(
+          width,
+          height
+        );
+
+      }
+
+      window.addEventListener(
+        "resize",
+        resizeVision
+      );
+
+
+      /* ANIMATION */
+
+      const clock =
+        new THREE.Clock();
+
+
+      function animateVision() {
+
+        requestAnimationFrame(
+          animateVision
+        );
+
+        const elapsed =
+          clock.getElapsedTime();
+
+
+        vehicle.position.y =
+          Math.sin(elapsed * 1.5) * 0.025;
+
+
+        sensor.rotation.y =
+          Math.sin(elapsed * 2) * 0.25;
+
+
+        beam.material.opacity =
+          0.10 +
+          Math.sin(elapsed * 2) * 0.035;
+
+
+        controls.update();
+
+        renderer.render(
+          scene,
+          camera
+        );
+
+      }
+
+      animateVision();
+
+    }
+
+
+    /* =====================================================
+       2. 3D BIOMEDICAL PHONE
+    ===================================================== */
+
+    const medicalContainer =
+      document.getElementById("medical3d");
+
+
+    if (medicalContainer) {
+
+      const medicalScene =
+        new THREE.Scene();
+
+      medicalScene.background =
+        new THREE.Color(0x07090e);
+
+
+      /* CAMERA */
+
+      const medicalCamera =
+        new THREE.PerspectiveCamera(
+          38,
+          medicalContainer.clientWidth /
+          medicalContainer.clientHeight,
+          0.1,
+          100
+        );
+
+      medicalCamera.position.set(
+        5,
+        2.5,
+        7
+      );
+
+
+      /* RENDERER */
+
+      const medicalRenderer =
+        new THREE.WebGLRenderer({
+          antialias: true,
+          alpha: true
+        });
+
+      medicalRenderer.setPixelRatio(
+        Math.min(window.devicePixelRatio, 2)
+      );
+
+      medicalRenderer.setSize(
+        medicalContainer.clientWidth,
+        medicalContainer.clientHeight
+      );
+
+      medicalRenderer.shadowMap.enabled = true;
+
+      medicalContainer.appendChild(
+        medicalRenderer.domElement
+      );
+
+
+      /* CONTROLS */
+
+      const medicalControls =
+        new OrbitControls(
+          medicalCamera,
+          medicalRenderer.domElement
+        );
+
+      medicalControls.enableDamping = true;
+
+      medicalControls.dampingFactor = 0.06;
+
+      medicalControls.enablePan = false;
+
+      medicalControls.minDistance = 4;
+
+      medicalControls.maxDistance = 10;
+
+
+      /* LIGHTING */
+
+      medicalScene.add(
+        new THREE.AmbientLight(
+          0xffffff,
+          1.5
+        )
+      );
+
+
+      const phoneLight =
+        new THREE.DirectionalLight(
+          0xffffff,
+          3
+        );
+
+      phoneLight.position.set(
+        4,
+        6,
+        5
+      );
+
+      phoneLight.castShadow = true;
+
+      medicalScene.add(phoneLight);
+
+
+      const cyanGlow =
+        new THREE.PointLight(
+          0x5ee7df,
+          25,
+          15
+        );
+
+      cyanGlow.position.set(
+        -3,
+        2,
+        3
+      );
+
+      medicalScene.add(cyanGlow);
+
+
+      const purpleGlow =
+        new THREE.PointLight(
+          0x8b7cff,
+          20,
+          15
+        );
+
+      purpleGlow.position.set(
+        3,
+        1,
+        -3
+      );
+
+      medicalScene.add(purpleGlow);
+
+
+      /* =================================================
+         PHONE BODY
+      ================================================= */
+
+      const phone =
+        new THREE.Group();
+
+      medicalScene.add(phone);
+
+
+      const phoneBody =
+        new THREE.Mesh(
+
+          new THREE.BoxGeometry(
+            2.7,
+            5.2,
+            0.42
+          ),
+
+          new THREE.MeshStandardMaterial({
+            color: 0x161a23,
+            metalness: 0.75,
+            roughness: 0.22
+          })
+
+        );
+
+      phoneBody.castShadow = true;
+
+      phone.add(phoneBody);
+
+
+      /* SCREEN */
+
+      const screen =
+        new THREE.Mesh(
+
+          new THREE.BoxGeometry(
+            2.35,
+            4.65,
+            0.035
+          ),
+
+          new THREE.MeshStandardMaterial({
+            color: 0x061015,
+            emissive: 0x03171a,
+            emissiveIntensity: 0.8,
+            roughness: 0.25,
+            metalness: 0.15
+          })
+
+        );
+
+      screen.position.z =
+        -0.23;
+
+      phone.add(screen);
+
+
+      /* SCREEN BORDER */
+
+      const screenBorder =
+        new THREE.Mesh(
+
+          new THREE.BoxGeometry(
+            2.48,
+            4.78,
+            0.02
+          ),
+
+          new THREE.MeshBasicMaterial({
+            color: 0x252b38
+          })
+
+        );
+
+      screenBorder.position.z =
+        -0.215;
+
+      phone.add(screenBorder);
+
+      /* Move screen slightly forward again */
+
+      screen.position.z =
+        -0.25;
+
+
+      /* =================================================
+         ECG WAVEFORM
+      ================================================= */
+
+      const ecgPoints = [];
+
+      for (
+        let i = 0;
+        i < 100;
+        i++
+      ) {
+
+        const x =
+          -1.05 +
+          (i / 99) * 2.1;
+
+        let y =
+          Math.sin(i * 0.25) * 0.06;
+
+        if (
+          i === 35 ||
+          i === 36
+        ) {
+          y = 0.35;
+        }
+
+        if (
+          i === 37
+        ) {
+          y = -0.55;
+        }
+
+        if (
+          i === 38 ||
+          i === 39
+        ) {
+          y = 0.25;
+        }
+
+        ecgPoints.push(
+          new THREE.Vector3(
+            x,
+            y,
+            0
+          )
+        );
+
+      }
+
+
+      const ecgGeometry =
+        new THREE.BufferGeometry().setFromPoints(
+          ecgPoints
+        );
+
+
+      const ecgMaterial =
+        new THREE.LineBasicMaterial({
+          color: 0x5ee7df
+        });
+
+
+      const ecgLine =
+        new THREE.Line(
+          ecgGeometry,
+          ecgMaterial
+        );
+
+
+      ecgLine.position.set(
+        0,
+        1.15,
+        -0.28
+      );
+
+
+      phone.add(ecgLine);
+
+
+      /* =================================================
+         PPG WAVEFORM
+      ================================================= */
+
+      const ppgPoints = [];
+
+      for (
+        let i = 0;
+        i < 100;
+        i++
+      ) {
+
+        const x =
+          -1.05 +
+          (i / 99) * 2.1;
+
+        const y =
+          Math.sin(i * 0.18) *
+          0.15;
+
+        ppgPoints.push(
+          new THREE.Vector3(
+            x,
+            y,
+            0
+          )
+        );
+
+      }
+
+
+      const ppgGeometry =
+        new THREE.BufferGeometry().setFromPoints(
+          ppgPoints
+        );
+
+
+      const ppgLine =
+        new THREE.Line(
+
+          ppgGeometry,
+
+          new THREE.LineBasicMaterial({
+            color: 0x8b7cff
+          })
+
+        );
+
+
+      ppgLine.position.set(
+        0,
+        -0.25,
+        -0.28
+      );
+
+
+      phone.add(ppgLine);
+
+
+      /* =================================================
+         SCREEN TEXT
+      ================================================= */
+
+      function createTextSprite(
+        text,
+        color,
+        scale
+      ) {
+
+        const canvas =
+          document.createElement("canvas");
+
+        canvas.width = 512;
+
+        canvas.height = 128;
+
+        const ctx =
+          canvas.getContext("2d");
+
+        ctx.clearRect(
+          0,
+          0,
+          canvas.width,
+          canvas.height
+        );
+
+        ctx.font =
+          "bold 38px Arial";
+
+        ctx.fillStyle =
+          color;
+
+        ctx.fillText(
+          text,
+          20,
+          70
+        );
+
+
+        const texture =
+          new THREE.CanvasTexture(
+            canvas
+          );
+
+        texture.needsUpdate = true;
+
+
+        const material =
+          new THREE.SpriteMaterial({
+            map: texture,
+            transparent: true
+          });
+
+
+        const sprite =
+          new THREE.Sprite(
+            material
+          );
+
+        sprite.scale.set(
+          scale,
+          scale * 0.25,
+          1
+        );
+
+        return sprite;
+
+      }
+
+
+      const ecgText =
+        createTextSprite(
+          "ECG  •  72 BPM",
+          "#5ee7df",
+          2
+        );
+
+      ecgText.position.set(
+        -0.85,
+        1.8,
+        -0.32
+      );
+
+      phone.add(ecgText);
+
+
+      const ppgText =
+        createTextSprite(
+          "PPG  •  ACTIVE",
+          "#8b7cff",
+          1.8
+        );
+
+      ppgText.position.set(
+        -0.8,
         0.35,
-        0.15,
-        0.08
-      ),
-      headlightMaterial
-    );
+        -0.32
+      );
 
-  light.position.set(
-    x,
-    0.55,
-    -2.03
-  );
+      phone.add(ppgText);
 
-  vehicle.add(light);
-}
 
+      const bluetoothText =
+        createTextSprite(
+          "Bluetooth Connected",
+          "#a5a7b0",
+          1.45
+        );
 
-createHeadlight(-0.7);
+      bluetoothText.position.set(
+        -0.72,
+        -1.25,
+        -0.32
+      );
 
-createHeadlight(0.7);
+      phone.add(bluetoothText);
 
 
-/\* =========================
-   CAMERA SENSOR
-   \========================= \*/
+      /* =================================================
+         PHONE CAMERA
+      ================================================= */
 
-const sensor =
-  new THREE.Group();
+      const cameraModule =
+        new THREE.Group();
 
-sensor.position.set(
-  0,
-  1.65,
-  -0.15
-);
+      cameraModule.position.set(
+        0,
+        2.45,
+        0
+      );
 
-vehicle.add(sensor);
+      phone.add(cameraModule);
 
 
-const sensorBody =
-  new THREE.Mesh(
-    new THREE.BoxGeometry(
-      0.45,
-      0.28,
-      0.35
-    ),
-    new THREE.MeshStandardMaterial({
-      color: 0x151820,
-      metalness: 0.7,
-      roughness: 0.25
-    })
-  );
+      const cameraRing =
+        new THREE.Mesh(
 
-sensor.add(sensorBody);
+          new THREE.CylinderGeometry(
+            0.24,
+            0.24,
+            0.08,
+            32
+          ),
 
+          new THREE.MeshStandardMaterial({
+            color: 0x050608,
+            metalness: 0.9,
+            roughness: 0.15
+          })
 
-/\* Sensor lens \*/
+        );
 
-const lens =
-  new THREE.Mesh(
-    new THREE.SphereGeometry(
-      0.1,
-      24,
-      24
-    ),
-    new THREE.MeshBasicMaterial({
-      color: 0x5ee7df
-    })
-  );
+      cameraRing.rotation.x =
+        Math.PI / 2;
 
-lens.position.z = -0.2;
+      cameraModule.add(cameraRing);
 
-sensor.add(lens);
 
+      const cameraLens =
+        new THREE.Mesh(
 
-/\* =========================
-   DETECTION / VISION BEAMS
-   \========================= \*/
+          new THREE.CircleGeometry(
+            0.15,
+            32
+          ),
 
-const beamMaterial =
-  new THREE.MeshBasicMaterial({
-    color: 0x5ee7df,
-    transparent: true,
-    opacity: 0.13,
-    side: THREE.DoubleSide
-  });
+          new THREE.MeshBasicMaterial({
+            color: 0x5ee7df
+          })
 
+        );
 
-const beamGeometry =
-  new THREE.ConeGeometry(
-    3.8,
-    7,
-    4,
-    1,
-    true
-  );
+      cameraLens.position.z =
+        0.05;
 
+      cameraModule.add(
+        cameraLens
+      );
 
-const beam =
-  new THREE.Mesh(
-    beamGeometry,
-    beamMaterial
-  );
 
-beam.rotation.x =
-  -Math.PI / 2;
+      /* =================================================
+         SIDE BUTTONS
+      ================================================= */
 
-beam.position.set(
-  0,
-  1,
-  -4
-);
+      const buttonMaterial =
+        new THREE.MeshStandardMaterial({
+          color: 0x2a2f3a,
+          metalness: 0.7,
+          roughness: 0.25
+        });
 
-vehicle.add(beam);
 
+      const powerButton =
+        new THREE.Mesh(
 
-/\* =========================
-   FLOATING DATA POINTS
-   \========================= \*/
+          new THREE.BoxGeometry(
+            0.08,
+            0.55,
+            0.18
+          ),
 
-const pointMaterial =
-  new THREE.MeshBasicMaterial({
-    color: 0x8b7cff
-  });
+          buttonMaterial
 
+        );
 
-for (let i = 0; i < 20; i++) {
+      powerButton.position.set(
+        1.42,
+        0.8,
+        0
+      );
 
-  const point =
-    new THREE.Mesh(
-      new THREE.SphereGeometry(
-        0.035,
-        8,
-        8
-      ),
-      pointMaterial
-    );
+      phone.add(powerButton);
 
-  point.position.set(
-    (Math.random() - 0.5) \* 8,
-    Math.random() \* 2,
-    (Math.random() - 0.5) \* 12
-  );
 
-  scene.add(point);
-}
+      const volumeButton =
+        new THREE.Mesh(
 
+          new THREE.BoxGeometry(
+            0.08,
+            0.8,
+            0.18
+          ),
 
-/\* =========================
-   VEHICLE START POSITION
-   \========================= \*/
+          buttonMaterial
 
-vehicle.position.set(
-  0,
-  0,
-  1
-);
+        );
 
+      volumeButton.position.set(
+        -1.42,
+        1,
+        0
+      );
 
-/\* =========================
-   RESIZE
-   \========================= \*/
+      phone.add(volumeButton);
 
-window\.addEventListener(
-  "resize",
-  () => {
 
-    camera.aspect =
-      container.clientWidth /
-      container.clientHeight;
+      /* =================================================
+         PHONE POSITION
+      ================================================= */
 
-    camera.updateProjectionMatrix();
+      phone.rotation.y =
+        -0.18;
 
-    renderer.setSize(
-      container.clientWidth,
-      container.clientHeight
-    );
+      phone.rotation.x =
+        0.04;
 
-  }
-);
 
+      /* =================================================
+         FLOATING SENSOR DATA
+      ================================================= */
 
-/\* =========================
-   ANIMATION
-   \========================= \*/
+      const dataMaterial =
+        new THREE.MeshBasicMaterial({
+          color: 0x5ee7df
+        });
 
-const clock =
-  new THREE.Clock();
 
+      for (
+        let i = 0;
+        i < 35;
+        i++
+      ) {
 
-function animate() {
+        const dot =
+          new THREE.Mesh(
 
-  requestAnimationFrame(
-    animate
-  );
+            new THREE.SphereGeometry(
+              0.025,
+              8,
+              8
+            ),
 
-  const elapsed =
-    clock.getElapsedTime();
+            dataMaterial
 
+          );
 
-  /\*
-   \* Subtle vehicle movement
-   \*/
+        const angle =
+          Math.random() *
+          Math.PI *
+          2;
 
-  vehicle.position.y =
-    Math.sin(elapsed \* 1.5) \* 0.025;
+        const radius =
+          2.2 +
+          Math.random() * 1.8;
 
+        dot.position.set(
 
-  /\*
-   \* Sensor scanning
-   \*/
+          Math.cos(angle) * radius,
 
-  sensor.rotation.y =
-    Math.sin(elapsed \* 2) \* 0.25;
+          (Math.random() - 0.5) * 5,
 
+          Math.sin(angle) * radius
 
-  /\*
-   \* Slight beam animation
-   \*/
+        );
 
-  beam.material.opacity =
-    0.10 +
-    Math.sin(elapsed \* 2) \* 0.035;
+        medicalScene.add(dot);
 
+      }
 
-  controls.update();
 
-  renderer.render(
-    scene,
-    camera
-  );
+      /* =================================================
+         RESIZE
+      ================================================= */
 
-}
+      function resizeMedical() {
 
+        const width =
+          medicalContainer.clientWidth;
 
-animate();
+        const height =
+          medicalContainer.clientHeight;
 
-\</script>
-  
+        medicalCamera.aspect =
+          width / height;
 
+        medicalCamera.updateProjectionMatrix();
 
-\</body>
-\</html>
+        medicalRenderer.setSize(
+          width,
+          height
+        );
+
+      }
+
+      window.addEventListener(
+        "resize",
+        resizeMedical
+      );
+
+
+      /* =================================================
+         ANIMATION
+      ================================================= */
+
+      const medicalClock =
+        new THREE.Clock();
+
+
+      function animateMedical() {
+
+        requestAnimationFrame(
+          animateMedical
+        );
+
+        const elapsed =
+          medicalClock.getElapsedTime();
+
+
+        /* Floating phone */
+
+        phone.position.y =
+          Math.sin(
+            elapsed * 1.2
+          ) * 0.08;
+
+
+        /* Gentle rotation */
+
+        phone.rotation.y =
+          -0.18 +
+          Math.sin(
+            elapsed * 0.5
+          ) * 0.08;
+
+
+        /* ECG pulse */
+
+        ecgLine.scale.y =
+          1 +
+          Math.sin(
+            elapsed * 4
+          ) * 0.05;
+
+
+        /* PPG pulse */
+
+        ppgLine.scale.y =
+          1 +
+          Math.sin(
+            elapsed * 3
+          ) * 0.08;
+
+
+        medicalControls.update();
+
+
+        medicalRenderer.render(
+          medicalScene,
+          medicalCamera
+        );
+
+      }
+
+      animateMedical();
+
+    }
+
+  </script>
+
+</body>
+
+</html>
