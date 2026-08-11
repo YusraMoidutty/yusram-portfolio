@@ -1,1 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Yusra Moidutty | Computer Vision & Embedded AI</title>
+
+  <meta name="description"
+        content="Yusra Moidutty — Computer Vision, Deep Learning, FPGA and Embedded AI Researcher.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --bg: #08090d;
+      --card: #101218;
+      --card2: #14161e;
+      --text: #f5f5f7;
+      --muted: #a5a7b0;
+      --line: rgba(255,255,255,0.09);
+      --accent: #8b7cff;
+      --accent2: #5ee7df;
+    }
+
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(8,9,13,0.78);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: rgba(139,124,255,0.12);
+      filter: blur(120px);
+      border-radius: 50%;
+      top: 5%;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.8fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.03;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 21px;
+      border-radius: 9px;
+      border: 1px solid var(--line);
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: white;
+      color: black;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: var(--card2);
+    }
+
+    .profile-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile {
+      width: 290px;
+      height: 290px;
+      border-radius: 50%;
+      padding: 7px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 80px rgba(139,124,255,0.18);
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid var(--bg);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-title {
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .info-item {
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-item:last-child {
+      border-bottom: none;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 14px;
+      color: white;
+      margin-bottom: 3px;
+    }
+
+    .info-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* RESEARCH */
+
+    .research-card {
+      background: linear-gradient(145deg, #11131a, #0d0f14);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 42px;
+    }
+
+    .research-card h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .research-card p {
+      color: var(--muted);
+      max-width: 850px;
+      margin-bottom: 28px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag {
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 100px;
+      color: #d4d5db;
+      font-size: 12px;
+      background: rgba(255,255,255,0.025);
+    }
+
+    /* METRICS */
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .metric {
+      padding: 22px;
+      border-radius: 14px;
+      background: var(--card2);
+      border: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      color: white;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 20px;
+    }
+
+    .project {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      border-color: rgba(139,124,255,0.45);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .project h3 {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .project p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      padding: 12px 17px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      color: #ddd;
+      font-size: 14px;
+    }
+
+    /* EDUCATION */
+
+    .timeline {
+      border-left: 1px solid var(--line);
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 40px 35px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background: var(--accent);
+      border-radius: 50%;
+      left: -5px;
+      top: 9px;
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .timeline-item h3 {
+      font-size: 21px;
+    }
+
+    .timeline-item .year {
+      color: var(--accent2);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      max-width: 760px;
+      margin: auto;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin: 20px 0 30px;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 130px;
+      }
+
+      .profile-wrapper {
+        order: -1;
+      }
+
+      .profile {
+        width: 220px;
+        height: 220px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .metrics {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .research-card {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .metrics {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#home" class="logo">
+        Yusra<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+      <div>
+
+        <div class="eyebrow">
+          Computer Vision • Deep Learning • Embedded AI
+        </div>
+
+        <h1>
+          Hi, I'm<br>
+          <span>Yusra Moidutty.</span>
+        </h1>
+
+        <p class="hero-description">
+          Researcher working at the intersection of computer vision,
+          deep learning, intelligent transportation systems, FPGA
+          acceleration and embedded AI.
+        </p>
+
+        <div class="buttons">
+
+          <a href="#research" class="btn btn-primary">
+            Explore My Research
+          </a>
+
+          <a href="Yusra_Moidutty_CV.pdf"
+             target="_blank"
+             class="btn btn-secondary">
+            View CV
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="profile-wrapper">
+
+        <div class="profile">
+          <img src="photo.jpeg" alt="Yusra Moidutty">
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">About Me</div>
+
+        <h2>Building intelligent<br>vision systems.</h2>
+
+      </div>
+
+
+      <div class="about-grid">
+
+        <div class="about-text">
+
+          <p>
+            My work focuses on developing computer vision systems
+            capable of operating reliably in challenging real-world
+            environments.
+          </p>
+
+          <p>
+            My research interests include deep learning,
+            image segmentation, nighttime vision, intelligent
+            transportation systems, embedded AI and hardware
+            acceleration.
+          </p>
+
+          <p>
+            I am particularly interested in taking AI models from
+            research environments and deploying them on practical
+            embedded and hardware platforms.
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div class="info-item">
+            <strong>Research Focus</strong>
+            <span>Computer Vision & Deep Learning</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Specialization</strong>
+            <span>Image Segmentation & Embedded AI</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Hardware</strong>
+            <span>Raspberry Pi • FPGA • PYNQ</span>
+          </div>
+
+          <div class="info-item">
+            <strong>Applications</strong>
+            <span>Intelligent Transportation Systems</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESEARCH -->
+
+  <section id="research">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">Featured Research</div>
+
+        <h2>Nighttime Road<br>Boundary Segmentation</h2>
+
+      </div>
+
+
+      <div class="research-card">
+
+        <h3>
+          Deep Learning for Low-Light Road Understanding
+        </h3>
+
+        <p>
+          A computer vision framework for nighttime road-boundary
+          segmentation designed to address low illumination,
+          headlight glare, shadows and sensor noise. The work
+          combines image enhancement, deep-learning segmentation
+          and embedded deployment.
+        </p>
+
+
+        <div class="tags">
+
+          <span class="tag">YOLOv12</span>
+          <span class="tag">Image Segmentation</span>
+          <span class="tag">CLAHE</span>
+          <span class="tag">Gamma Correction</span>
+          <span class="tag">Computer Vision</span>
+          <span class="tag">ADAS</span>
+          <span class="tag">Raspberry Pi 5</span>
+          <span class="tag">FPGA / PYNQ</span>
+
+        </div>
+
+
+        <div class="metrics">
+
+          <div class="metric">
+            <strong>96.42%</strong>
+            <span>Pixel Accuracy</span>
+          </div>
+
+          <div class="metric">
+            <strong>88.37%</strong>
+            <span>mIoU</span>
+          </div>
+
+          <div class="metric">
+            <strong>93.83%</strong>
+            <span>Dice Score</span>
+          </div>
+
+          <div class="metric">
+            <strong>YOLOv12</strong>
+            <span>Segmentation Model</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">Selected Projects</div>
+
+        <h2>Research into<br>real-world systems.</h2>
+
+      </div>
+
+
+      <div class="projects">
+
+        <div class="project">
+
+          <div class="project-number">01 / COMPUTER VISION</div>
+
+          <h3>YOLOv12 Road Segmentation</h3>
+
+          <p>
+            Development and evaluation of a YOLOv12-based
+            segmentation system for nighttime road-boundary
+            detection and pixel-level evaluation.
+          </p>
+
+          <div class="tags">
+            <span class="tag">YOLOv12</span>
+            <span class="tag">Python</span>
+            <span class="tag">Deep Learning</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">02 / FPGA</div>
+
+          <h3>YOLOv12 on FPGA / PYNQ</h3>
+
+          <p>
+            Exploration of hardware deployment of a YOLOv12 model
+            on a PYNQ FPGA platform, including model conversion,
+            inference and comparison with CPU execution.
+          </p>
+
+          <div class="tags">
+            <span class="tag">FPGA</span>
+            <span class="tag">PYNQ</span>
+            <span class="tag">ONNX</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">03 / EMBEDDED AI</div>
+
+          <h3>Raspberry Pi 5 Deployment</h3>
+
+          <p>
+            Embedded implementation of nighttime road-boundary
+            segmentation using a Raspberry Pi 5 and camera-based
+            real-time processing pipeline.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Raspberry Pi 5</span>
+            <span class="tag">Embedded AI</span>
+            <span class="tag">Real-Time Vision</span>
+          </div>
+
+        </div>
+
+
+        <div class="project">
+
+          <div class="project-number">04 / IMAGE PROCESSING</div>
+
+          <h3>Nighttime Image Enhancement</h3>
+
+          <p>
+            Multi-stage image enhancement pipeline using bilateral
+            filtering, gamma correction, CLAHE, HSV processing,
+            morphological operations and connected components.
+          </p>
+
+          <div class="tags">
+            <span class="tag">CLAHE</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Image Processing</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">Technical Skills</div>
+
+        <h2>Tools I work with.</h2>
+
+      </div>
+
+
+      <div class="skills">
+
+        <span class="skill">Python</span>
+        <span class="skill">PyTorch</span>
+        <span class="skill">YOLO</span>
+        <span class="skill">Computer Vision</span>
+        <span class="skill">OpenCV</span>
+        <span class="skill">Deep Learning</span>
+        <span class="skill">Image Segmentation</span>
+        <span class="skill">ONNX</span>
+        <span class="skill">FPGA</span>
+        <span class="skill">PYNQ</span>
+        <span class="skill">Raspberry Pi</span>
+        <span class="skill">Embedded AI</span>
+        <span class="skill">MATLAB</span>
+        <span class="skill">Git / GitHub</span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EDUCATION -->
+
+  <section id="education">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <div class="section-label">Education</div>
+
+        <h2>Academic journey.</h2>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+
+          <div class="year">M.S. / RESEARCH</div>
+
+          <h3>M.S. in Electrical Engineering</h3>
+
+          <p>
+            Research in computer vision, deep learning and
+            intelligent transportation systems.
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item">
+
+          <div class="year">UNDERGRADUATE</div>
+
+          <h3>B.Tech</h3>
+
+          <p>
+            Engineering background with focus on electrical and
+            technology-oriented applications.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact">
+
+        <div class="section-label">Contact</div>
+
+        <h2>Let's connect.</h2>
+
+        <p>
+          Interested in computer vision, embedded AI,
+          deep learning, FPGA acceleration or research
+          collaborations? Feel free to connect.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="Yusra_Moidutty_CV.pdf"
+             target="_blank"
+             class="btn btn-primary">
+            Download CV
+          </a>
+
+          <a href="https://github.com/YusraMoidutty"
+             target="_blank"
+             class="btn btn-secondary">
+            GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      © 2026 Yusra Moidutty. All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
