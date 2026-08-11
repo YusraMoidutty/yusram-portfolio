@@ -821,7 +821,117 @@
         padding: 80px 0;
       }
     }
+
+      /* =========================
+       INTERACTIVE 3D VISION
+       ========================= */
+    
+    .interactive-3d {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      margin-top: 35px;
+      overflow: hidden;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: #08090d;
+    }
+    
+    #vision3d {
+      width: 100%;
+      height: 100%;
+    }
+    
+    #vision3d canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      touch-action: none;
+    }
+    
+    .scene-title {
+      position: absolute;
+      top: 22px;
+      left: 25px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    
+    .scene-title strong {
+      display: block;
+      color: var(--accent2);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+    
+    .scene-title span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    
+    .scene-help {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    
+      padding: 8px 15px;
+      border-radius: 100px;
+    
+      background: rgba(8,9,13,0.75);
+      border: 1px solid var(--line);
+    
+      color: var(--muted);
+      font-size: 11px;
+    
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    
+    .scene-status {
+      position: absolute;
+      top: 22px;
+      right: 25px;
+      z-index: 10;
+    
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    
+      color: var(--accent2);
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent2);
+      box-shadow: 0 0 12px var(--accent2);
+    }
+    
+    @media (max-width: 800px) {
+      .interactive-3d {
+        height: 400px;
+      }
+    
+      .scene-help {
+        font-size: 10px;
+      }
+    }
+    
   </style>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -1098,6 +1208,8 @@
 
   </section>
 
+  
+
 
   <!-- PROJECTS -->
 
@@ -1108,6 +1220,28 @@
       <div class="section-title">
 
         <div class="section-label">Selected Projects</div>
+        <!-- INTERACTIVE 3D VISION SYSTEM -->
+
+          <div class="interactive-3d">
+          
+            <div class="scene-title">
+              <strong>INTERACTIVE VISION SYSTEM</strong>
+              <span>3D Transportation Concept</span>
+            </div>
+          
+            <div class="scene-status">
+              <div class="status-dot"></div>
+              REAL-TIME VISION
+            </div>
+          
+            <div id="vision3d"></div>
+          
+            <div class="scene-help">
+              ↔ Drag to rotate &nbsp; • &nbsp; Scroll / pinch to zoom
+            </div>
+          
+          </div>
+        
 
         <h2>Research Orientation into<br>real-world systems.</h2>
 
@@ -1503,6 +1637,681 @@
     </div>
 
   </footer>
+
+        <script type="module">
+
+import * as THREE from "three";
+
+import { OrbitControls }
+from "three/addons/controls/OrbitControls.js";
+
+
+/* =========================
+   BASIC SETUP
+   ========================= */
+
+const container = document.getElementById("vision3d");
+
+const scene = new THREE.Scene();
+
+scene.background = new THREE.Color(0x08090d);
+
+
+/* =========================
+   CAMERA
+   ========================= */
+
+const camera = new THREE.PerspectiveCamera(
+  45,
+  container.clientWidth / container.clientHeight,
+  0.1,
+  1000
+);
+
+camera.position.set(7, 5, 9);
+
+
+/* =========================
+   RENDERER
+   ========================= */
+
+const renderer = new THREE.WebGLRenderer({
+  antialias: true,
+  alpha: true
+});
+
+renderer.setPixelRatio(
+  Math.min(window.devicePixelRatio, 2)
+);
+
+renderer.setSize(
+  container.clientWidth,
+  container.clientHeight
+);
+
+renderer.shadowMap.enabled = true;
+
+renderer.shadowMap.type =
+  THREE.PCFSoftShadowMap;
+
+container.appendChild(renderer.domElement);
+
+
+/* =========================
+   CONTROLS
+   ========================= */
+
+const controls = new OrbitControls(
+  camera,
+  renderer.domElement
+);
+
+controls.enableDamping = true;
+
+controls.dampingFactor = 0.06;
+
+controls.enablePan = false;
+
+controls.minDistance = 5;
+
+controls.maxDistance = 15;
+
+controls.maxPolarAngle =
+  Math.PI / 2.05;
+
+
+/* =========================
+   LIGHTING
+   ========================= */
+
+const ambientLight =
+  new THREE.AmbientLight(
+    0xffffff,
+    1.2
+  );
+
+scene.add(ambientLight);
+
+
+const mainLight =
+  new THREE.DirectionalLight(
+    0xffffff,
+    2.2
+  );
+
+mainLight.position.set(
+  5,
+  10,
+  5
+);
+
+mainLight.castShadow = true;
+
+scene.add(mainLight);
+
+
+const purpleLight =
+  new THREE.PointLight(
+    0x8b7cff,
+    30,
+    20
+  );
+
+purpleLight.position.set(
+  -5,
+  4,
+  -3
+);
+
+scene.add(purpleLight);
+
+
+const cyanLight =
+  new THREE.PointLight(
+    0x5ee7df,
+    25,
+    20
+  );
+
+cyanLight.position.set(
+  5,
+  3,
+  3
+);
+
+scene.add(cyanLight);
+
+
+/* =========================
+   ROAD
+   ========================= */
+
+const roadMaterial =
+  new THREE.MeshStandardMaterial({
+    color: 0x181b23,
+    roughness: 0.85,
+    metalness: 0.1
+  });
+
+
+const roadGeometry =
+  new THREE.BoxGeometry(
+    9,
+    0.25,
+    16
+  );
+
+
+const road =
+  new THREE.Mesh(
+    roadGeometry,
+    roadMaterial
+  );
+
+road.position.y = -0.2;
+
+road.receiveShadow = true;
+
+scene.add(road);
+
+
+/* =========================
+   ROAD SIDE LINES
+   ========================= */
+
+function createRoadLine(x) {
+
+  const geometry =
+    new THREE.BoxGeometry(
+      0.06,
+      0.04,
+      16
+    );
+
+  const material =
+    new THREE.MeshBasicMaterial({
+      color: 0x5ee7df
+    });
+
+  const line =
+    new THREE.Mesh(
+      geometry,
+      material
+    );
+
+  line.position.set(
+    x,
+    -0.04,
+    0
+  );
+
+  scene.add(line);
+
+  return line;
+}
+
+
+createRoadLine(-4.2);
+
+createRoadLine(4.2);
+
+
+/* =========================
+   ROAD CENTER MARKINGS
+   ========================= */
+
+const centerMaterial =
+  new THREE.MeshBasicMaterial({
+    color: 0xffffff
+  });
+
+
+for (let z = -7; z < 8; z += 2) {
+
+  const geometry =
+    new THREE.BoxGeometry(
+      0.08,
+      0.05,
+      1
+    );
+
+  const marker =
+    new THREE.Mesh(
+      geometry,
+      centerMaterial
+    );
+
+  marker.position.set(
+    0,
+    -0.03,
+    z
+  );
+
+  scene.add(marker);
+}
+
+
+/* =========================
+   VEHICLE
+   ========================= */
+
+const vehicle =
+  new THREE.Group();
+
+scene.add(vehicle);
+
+
+/* Main body */
+
+const bodyGeometry =
+  new THREE.BoxGeometry(
+    2.3,
+    0.65,
+    4
+  );
+
+const bodyMaterial =
+  new THREE.MeshStandardMaterial({
+    color: 0x777b88,
+    roughness: 0.35,
+    metalness: 0.5
+  });
+
+const body =
+  new THREE.Mesh(
+    bodyGeometry,
+    bodyMaterial
+  );
+
+body.position.y = 0.45;
+
+body.castShadow = true;
+
+vehicle.add(body);
+
+
+/* Roof */
+
+const roofGeometry =
+  new THREE.BoxGeometry(
+    1.65,
+    0.5,
+    1.9
+  );
+
+const roofMaterial =
+  new THREE.MeshStandardMaterial({
+    color: 0x292d38,
+    roughness: 0.2,
+    metalness: 0.6
+  });
+
+const roof =
+  new THREE.Mesh(
+    roofGeometry,
+    roofMaterial
+  );
+
+roof.position.set(
+  0,
+  0.95,
+  0.15
+);
+
+roof.castShadow = true;
+
+vehicle.add(roof);
+
+
+/* Windows */
+
+const windowMaterial =
+  new THREE.MeshStandardMaterial({
+    color: 0x101722,
+    metalness: 0.6,
+    roughness: 0.15
+  });
+
+
+const frontWindow =
+  new THREE.Mesh(
+    new THREE.BoxGeometry(
+      1.45,
+      0.35,
+      0.05
+    ),
+    windowMaterial
+  );
+
+frontWindow.position.set(
+  0,
+  1.02,
+  -0.82
+);
+
+vehicle.add(frontWindow);
+
+
+const rearWindow =
+  new THREE.Mesh(
+    new THREE.BoxGeometry(
+      1.45,
+      0.35,
+      0.05
+    ),
+    windowMaterial
+  );
+
+rearWindow.position.set(
+  0,
+  1.02,
+  1.12
+);
+
+vehicle.add(rearWindow);
+
+
+/* =========================
+   WHEELS
+   ========================= */
+
+function createWheel(x, z) {
+
+  const geometry =
+    new THREE.CylinderGeometry(
+      0.42,
+      0.42,
+      0.28,
+      32
+    );
+
+  const material =
+    new THREE.MeshStandardMaterial({
+      color: 0x111216,
+      roughness: 0.8
+    });
+
+  const wheel =
+    new THREE.Mesh(
+      geometry,
+      material
+    );
+
+  wheel.rotation.z =
+    Math.PI / 2;
+
+  wheel.position.set(
+    x,
+    0.3,
+    z
+  );
+
+  wheel.castShadow = true;
+
+  vehicle.add(wheel);
+}
+
+
+createWheel(-1.25, -1.25);
+createWheel(1.25, -1.25);
+
+createWheel(-1.25, 1.25);
+createWheel(1.25, 1.25);
+
+
+/* =========================
+   HEADLIGHTS
+   ========================= */
+
+const headlightMaterial =
+  new THREE.MeshBasicMaterial({
+    color: 0xffffff
+  });
+
+
+function createHeadlight(x) {
+
+  const light =
+    new THREE.Mesh(
+      new THREE.BoxGeometry(
+        0.35,
+        0.15,
+        0.08
+      ),
+      headlightMaterial
+    );
+
+  light.position.set(
+    x,
+    0.55,
+    -2.03
+  );
+
+  vehicle.add(light);
+}
+
+
+createHeadlight(-0.7);
+
+createHeadlight(0.7);
+
+
+/* =========================
+   CAMERA SENSOR
+   ========================= */
+
+const sensor =
+  new THREE.Group();
+
+sensor.position.set(
+  0,
+  1.65,
+  -0.15
+);
+
+vehicle.add(sensor);
+
+
+const sensorBody =
+  new THREE.Mesh(
+    new THREE.BoxGeometry(
+      0.45,
+      0.28,
+      0.35
+    ),
+    new THREE.MeshStandardMaterial({
+      color: 0x151820,
+      metalness: 0.7,
+      roughness: 0.25
+    })
+  );
+
+sensor.add(sensorBody);
+
+
+/* Sensor lens */
+
+const lens =
+  new THREE.Mesh(
+    new THREE.SphereGeometry(
+      0.1,
+      24,
+      24
+    ),
+    new THREE.MeshBasicMaterial({
+      color: 0x5ee7df
+    })
+  );
+
+lens.position.z = -0.2;
+
+sensor.add(lens);
+
+
+/* =========================
+   DETECTION / VISION BEAMS
+   ========================= */
+
+const beamMaterial =
+  new THREE.MeshBasicMaterial({
+    color: 0x5ee7df,
+    transparent: true,
+    opacity: 0.13,
+    side: THREE.DoubleSide
+  });
+
+
+const beamGeometry =
+  new THREE.ConeGeometry(
+    3.8,
+    7,
+    4,
+    1,
+    true
+  );
+
+
+const beam =
+  new THREE.Mesh(
+    beamGeometry,
+    beamMaterial
+  );
+
+beam.rotation.x =
+  -Math.PI / 2;
+
+beam.position.set(
+  0,
+  1,
+  -4
+);
+
+vehicle.add(beam);
+
+
+/* =========================
+   FLOATING DATA POINTS
+   ========================= */
+
+const pointMaterial =
+  new THREE.MeshBasicMaterial({
+    color: 0x8b7cff
+  });
+
+
+for (let i = 0; i < 20; i++) {
+
+  const point =
+    new THREE.Mesh(
+      new THREE.SphereGeometry(
+        0.035,
+        8,
+        8
+      ),
+      pointMaterial
+    );
+
+  point.position.set(
+    (Math.random() - 0.5) * 8,
+    Math.random() * 2,
+    (Math.random() - 0.5) * 12
+  );
+
+  scene.add(point);
+}
+
+
+/* =========================
+   VEHICLE START POSITION
+   ========================= */
+
+vehicle.position.set(
+  0,
+  0,
+  1
+);
+
+
+/* =========================
+   RESIZE
+   ========================= */
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    camera.aspect =
+      container.clientWidth /
+      container.clientHeight;
+
+    camera.updateProjectionMatrix();
+
+    renderer.setSize(
+      container.clientWidth,
+      container.clientHeight
+    );
+
+  }
+);
+
+
+/* =========================
+   ANIMATION
+   ========================= */
+
+const clock =
+  new THREE.Clock();
+
+
+function animate() {
+
+  requestAnimationFrame(
+    animate
+  );
+
+  const elapsed =
+    clock.getElapsedTime();
+
+
+  /*
+   * Subtle vehicle movement
+   */
+
+  vehicle.position.y =
+    Math.sin(elapsed * 1.5) * 0.025;
+
+
+  /*
+   * Sensor scanning
+   */
+
+  sensor.rotation.y =
+    Math.sin(elapsed * 2) * 0.25;
+
+
+  /*
+   * Slight beam animation
+   */
+
+  beam.material.opacity =
+    0.10 +
+    Math.sin(elapsed * 2) * 0.035;
+
+
+  controls.update();
+
+  renderer.render(
+    scene,
+    camera
+  );
+
+}
+
+
+animate();
+
+</script>
+  
 
 
 </body>
